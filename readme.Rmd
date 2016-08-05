@@ -1,0 +1,10 @@
+---
+title: "Curso Introducción a R"
+subtitle: "Universidad Nacional de Tierra del Fuego 2016"
+author: "Luciano Selzer"
+output: md_document
+---
+
+
+En este curso se va introducir al alumno en el manejo de R, con enfásis en 
+investigación reproducible.
