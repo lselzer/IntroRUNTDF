@@ -1,0 +1,56 @@
+# Introdución {#intro}
+
+Trabajar con la interfaz de gráfica de R es un poco incómodo (poniendolo 
+suavemente). Por lo que se han desarrollado varios entornos de desarrollo  
+integrado (IDE por sus siglas en inglés) que facilitan su uso. Una de las más
+trabajadas y pulidas es RStudio.
+
+## Introduction to RStudio
+
+RStudio es una interfaz de desarrollo integrada, gratis y de código abierto.
+Posee un editor de código, funciona en múltiples plataformas (incluyendo
+servidores) y tiene muchas ventajas como integración con control de versión y
+manejo de proyectos.
+
+
+**Disposición Básica**
+
+Cuando abres RStudio por primera vez verás tres paneles:
+
+  +  La consola interactiva de R (a la izquierda)
+  +  El Entorno/Historial, en inglés Environment/History (en pestañas en la parte superior derecha)
+  +  Archivos/Gráficos/Paquetes/Ayuda/Visualizador, también en inglés Files/Plots/Packages/Help/Viewer (en la parte inferior derecha)
+  
+Una vez que abre un archivo, como por ejemplo un script de R, un panel de edición
+se abre en la parte superior izquierda.
+
+## Flujo de trabajo con RStudio
+Hay dos maneras básicas de trabajar con RStudio.
+
+1. Probar y jugar dentro de la consola interactiva y luego copiar el código a un
+archivo .R para ejecutar más tarde.
+   *  Funciona bien cuando se hacen pequeñas pruebas y recién se comienza.
+   *  Pero rápidamente se vuelve laborioso.
+2. Empezar a escribir un archivo .R y luego usar el comando / atajo de RStudio para
+ejecutar la línea actual o las líneas seleccionadas en la consola.
+   * Es la mejor forma de empezar; así todo el código queda guardado para más
+   tarde
+   * Podrás ejecutar el archivo desde RStudio o usando la función de R
+   `source()`.
+   
+   
+```{block, running-code-seg, type = 'rmdtip'}
+## Tip: Ejecutando partes de tu código
+
+RStudio tiene una gran flexibilidad al ejecutar código dentro de la ventana
+de edición. Hay botones, menues y atajos de teclado. Para ejectuar la línea
+actual podés 1. hacer click en el botón `Run` arriba del panel de edición, o
+2. Seleccionar "Run Lines" desde el menú "Code", o 3. apretar Ctrl+Enter en 
+Windows o Linux o Command+Enter en OS X (Este atajo también puede verse 
+dejando el puntero del mouse sobre el botón `Run`). Para ejecutar un bloque de
+código, seleccionálo y después solo presiona `Run`. Si has modificado una parte
+del bloque que has ejecutado reción no hay necesidad de reseleccionarlo y 
+darle `Run`, podés usar el botón a continuación, `Re-run the previous region`.
+Esto va a ejecutar el bloque de código previo incluyendo las modificaciones que
+has hecho.
+```
