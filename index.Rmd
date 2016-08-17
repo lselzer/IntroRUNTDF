@@ -1,0 +1,43 @@
+--- 
+title: "Introducción a R"
+subtitle: "UNTDF"
+author: "Luciano Selzer"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: lselzer/IntroRUNTDF
+description: "Este libro es una introducción a R "
+---
+
+# ¿Qué es R?
+
+
+R es un lenguaje utilizado principalmente para realizar análisis estadísticos, 
+gráficos y para programación. Es una implementación gratuita de S, que fue 
+creado en los años 70 por cientficos en los laboratorios Bell de AT&T. Debido a su
+licencia libre y relativa facilidad de uso gran cantidad de funciones 
+estadísticas, de manejo de datos, gráficos han sido escritas. Al ser un lenguaje
+de programación las rutinas o *scripts* pueden ser compartidos y reutilizados 
+por otros usuarios. Además, ya que todo el análisis estadístico queda 
+documentado en el script permite reproducir los resultados obtenidos en una
+investigación de forma sencilla. Tiene un sistema de paquetes que permite
+distribuir de forma simple y rápida nuevas funcionalidades.
+
+1. Es actualmente el software que ofrece mayor número de funciones estadísticas 
+y aplicaciones para la creación de gráficos. Colaboradores de todo el mundo 
+producen paquetes destinados a resolver problemas particulares o desarrollan 
+determinadas técnicas estadísticas. Cada usuario puede, además, crear sus
+propias funciones y rutinas combinando las funciones existentes.   
+2. Existe una amplia comunidad de usuarios y por lo tanto, una gran oferta de 
+ayudas para aquellos que se inician en el uso del programa, incluyendo foros de 
+discusión en internet y una creciente bibliografía.   
+3. R es una *lingua franca* para el intercambio de ideas en el ámbito 
+científico. De la misma manera en que se escribe un artículo para comunicar
+ideas, pueden escribirse rutinas para comunicar un análisis. Un número 
+creciente de trabajos citan este software o presentan rutinas escritas en este
+lenguaje publicadas.   
+
