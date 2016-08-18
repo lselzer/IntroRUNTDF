@@ -41,3 +41,29 @@ ideas, pueden escribirse rutinas para comunicar un análisis. Un número
 creciente de trabajos citan este software o presentan rutinas escritas en este
 lenguaje publicadas.   
 
+## Prerrequisitos
+
+Para este curso son necesarios una serie de programas. Primero, necesitamos
+R. Para bajarlo ir a [https://cran.r-project.org/](https://cran.r-project.org/),
+hay varias opciones según el sistema operativo (Linux, Mac OS X, Windows). 
+Elegir la opción correspondiente. Si eligen Windows, a continuación deben elegir
+`base` y luego *Download R 3.3.1 for Windows* que es la versión actual al 
+momento de escribir estas palabras. Luego de que termine de bajar instalarlo.
+
+Por otro lado, necesitaremos Git. Git es un sistema de control de versión. En 
+el próximo capítulo veremos como se usa. Los sistemas de control de versión 
+sirven para mantener un control de los cambios en el código, respaldo, y 
+facilitan la colaboración entre pares. Para descargarlo ir 
+[https://git-scm.com/](https://git-scm.com/). Abajo a la derecha aparecerá una
+imagen de un monitor con un botón donde aparece la versión para nuestro sistema
+operativo. Hacer click ahí, descargar e instalar. Si no están en una computadora
+compartida, también será conveniente instalar un programa para recordar la 
+contraseña del servicio de git provisto por [GitHub](https://github.com). Si 
+están en Windows, deben descargar Git Credential Manager for Windows. Ir a 
+https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/tag/v.1.6.0
+, desplazarse hasta *Downloads* y descargar el ejecutable (la primera opción).
+Instalar. Ahora, solo deberán ingresar su usuario y contraseña solo la primera
+vez que Git se los solicite.
+
+A continuación debemos instalar RStudio. Para esto, debemos navegar hasta
+https://www.rstudio.com/products/rstudio/download2/ y poner
