@@ -1,6 +1,6 @@
 # Manejo de Proyectos con RStudio {#proyectos}
 
-# Introducción
+## Introducción
 
 El proceso científico es naturalmente incremental, y muchos proyectos empiezan
 como algunas notas, algo de código, luego un manuscrito y eventualmente todo
@@ -28,3 +28,66 @@ Un buen diseño de proyecto va a ser tu vida más fácil:
   (Un compañero de laboratorio, colaborador, o supervisor);
   + Te permite subir facilmente código con tu propuesta de manuscrito;
   + Hace que sea más fácil volver a un proyecto luego de dejarlo por un tiempo.
+
+## Una posible solución
+
+Afortunadamente, hay herramientas y paquetes que pueden ayudarte a manejar
+el trabajo de forma efectiva.
+
+Una de los aspectos más poderosos y útiles de RStudio es el manejo de proyectos.
+Hoy vamos a usarlo para crear un proyecto autocontenido y reproducible.
+
+```{block, type='challenge'}
+## Desafio: Crear un proyecto autocontenido
+
+Vamos a crear un proyecto autocontenido en RStudio:
+
+1. Hacer click en "File" en el menú, y luego en "New Project"
+2. Click en "New Directory"
+3. Click en "Empty Project"
+4. Escribir el nombre de la carpeta donde se guardará el proyecto, e.g.
+"mi_proyecto"
+5. Asegurarse de que la casilla "Create a git repository" este seleccionada.
+6. Click en el botón "Create Project"
+```
+
+Ahora cuando iniciemos R en la carpeta del proyecto, o abramos el proyecto 
+con RStudio, todo nuestro trabajo en este proyecto va estar autocontenido en
+esta carpeta
+
+
+## Buenas prácticas para manejo de proyectos
+
+Aunque no hay una manera que sea la "mejor" para diseñar un proyecto, si hay 
+alguno lineamientos principales a seguir que harán el manejo de proyecto más
+sencillo:
+
+
+## Tratar los datos como solo lectura
+
+Esta es probablemente la meta más importante al configurar un proyecto. 
+Generalmente, los datos toman mucho tiempo o son caros de obtener. Al trabajar
+con ellos interactivamente (e.g. en Excel) donde pueden ser modificados,
+siginifica que nunca estás seguro de donde vienen los datos, o como 
+han sido moficcados desde su colección. Por es buena idea tratar los 
+datos como "solo-lectura"
+
+## Limpieza de datos
+
+En muchos casos los datos estarán "sucios": es necesarios un preprocesado 
+significativo para que sean aceptados por R (o cualquier otro lenguaje de
+programación). Esto a veces es llamado "data munging". Es útil guardar estos
+scripts en una carpeta separada, y crear una segunda carpeta de datos 
+"solo lectura" para guardar los datos "limpios".
+
+## Trata la salida generada como descartable
+
+Cualquier cosa generada por tus scripts debe ser tratado como descartable:
+debería poder ser regenerada a partir de tus scripts.
+
+Hay muchas formas de manejar estas salidas. Es útil tener un carpeta de 
+salida con diferentes sub-carpetas para cada análisis. Esto hace que sea
+más fácil encontrar los resultados, como muchos de los análisis son
+exploratorios y no terminan usandose en el proyecto final, y algunos
+de los análisis se comparten entre proyectos.
+
