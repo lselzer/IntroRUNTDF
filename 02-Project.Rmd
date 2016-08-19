@@ -91,3 +91,69 @@ más fácil encontrar los resultados, como muchos de los análisis son
 exploratorios y no terminan usandose en el proyecto final, y algunos
 de los análisis se comparten entre proyectos.
 
+
+```{block, type='callout'}
+## Tip: Prácticas suficientemente buenas para la computación científica
+
+[Good Enough Practices for Scientific Computing](https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf) da las siguientes
+recomendaciones para la organización de proyectos:
+
+1. Poner cada proyecto en su propia carpeta, la cual tiene el nombre del
+proyecto.
+2. Poner los documentos de texto asociados con el proyecto una carpeta 
+llamada `doc`.
+3. Poner los datos "crudos" en una carpeta llamada `data`, y los archivos
+generados durante la limpieza en una caperta llamada `results`.
+4. Poner el codigo de fuente del proyecto y los programas en la carpeta
+`scr` y programas externos o compilados localmente en la carpeta  `bin`.
+5. Nombrar todos los archivos de forma que refleje su contenido o función.
+```
+
+```{block, type = 'callout'}
+## Tip: ProjectTemplate - una posible solución
+
+Una forma de automatizar el manejo de proyectos es instalar un paquete de
+terceros, `ProjectTemplate`. Este paquete va a configurar una estrucutra ideal
+para el manejo del proyecto. Es muy útil ya que permite tener el análisis de
+manera estructurada y organizada. En conjunto con la funcionalidad propia de 
+RStudio y Git vas a poder mantener un seguimiento de tu trabajo y ser capaz
+de compartirlo con colaboradores.
+
+1. Instala `ProjectTemplate`.
+2. Carga el paquete.
+3. Inicializa el proyecto:
+
+> ```{r, eval=FALSE}
+> install.packages("ProjectTemplate")
+> library(ProjectTemplate)
+> create.project("../my_project", merge.strategy = "allow.non.conflict")
+> ```
+
+
+Para más información de ProjectTemplate y sus funcionalidades vista el sitio
+web [ProjectTemplate](http://projecttemplate.net/index.html)
+
+```
+
+
+## Separa la definición de la función de su aplicación
+
+Cuando el proyecto en nuevo, los archivos script generalmente contienen muchas
+líneas de código que es ejecutado directamente. Cuando madura, los pedazos 
+reusables son convertidos en funciones. Es buena idea separar estas funciones
+en un carpeta distinta; una carpeta para las funciones útiles que vas a reusar
+entre análisis y proyectos y otra para guardar los scripts de análisis.
+
+```{block, type='callout'}
+## Tip: evita la duplicación
+
+Puede que te encuentres usando datos o scripts de análisis entre varios 
+proyectos. Generalmente, vas a querer evitar la duplicación para ahorrar
+espacio y evitar hacer cambios al código en varios lugares.
+
+En este caso es útil hacer "vínculos símbolicos", basicamente son atajos
+a archivos que están en otro lugar del sistema de archivos. En Linux y OS x
+se usar comando `ln -s`, y en Windows se puede crear un acceso directo o usar
+el comando `mklink` en la terminal de Windows.
+```
+
