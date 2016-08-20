@@ -131,12 +131,16 @@ de compartirlo con colaboradores.
 
 
 Para más información de ProjectTemplate y sus funcionalidades vista el sitio
-web [ProjectTemplate](http://projecttemplate.net/index.html)
+web [ProjectTemplate](http://projecttemplate.net/index.html).
 
+
+```
 ```
 
 
+
 ## Separa la definición de la función de su aplicación
+
 
 Cuando el proyecto en nuevo, los archivos script generalmente contienen muchas
 líneas de código que es ejecutado directamente. Cuando madura, los pedazos 
@@ -155,5 +159,64 @@ En este caso es útil hacer "vínculos símbolicos", basicamente son atajos
 a archivos que están en otro lugar del sistema de archivos. En Linux y OS x
 se usar comando `ln -s`, y en Windows se puede crear un acceso directo o usar
 el comando `mklink` en la terminal de Windows.
+```
+
+## Guarda los datos en la carpeta data
+
+Ahora que tenemos una buena estructura de carpetas, vamos a guardar el archivo
+de datos en la carpeta `data/`.
+
+
+```{block, type='challenge'}
+## Desafio 1
+
+Descarga los datos de gapminder de [aquí](https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv).
+
+1. Descarga el archivo (CTRL + S, click botón derecho -> "Guardar como", o 
+Archivo -> "Guardar página como")
+2. Asegúrate que el archivo guardado tiene el nombre `gapminder-FiveYearData.csv`.
+3. Guarda el archivo en la carpeta `data/` dentro de tu proyecto.
+
+Más tarde vamos a cargar e inspeccionar estos datos.
+```
+
+
+## Control de Versión
+
+También hemos configurado nuestro proyecto para que se integre con git, 
+poniendolo bajo control de versión. RStudio tiene una buena interfaz a git
+que la consola, pero es muy limitada por lo que a veces será necesario usar
+la consola. Vamos a hacer confirmación (*commit*)  inicial de nuestros archivos.
+
+El panel de "Environment/History"" también tiene el panel de "Git". Podemos
+hacer un *stage* de cada archivo marcando la casilla al lado:
+Vas a ver una "A" verde al lado de los archivos y carpetas preparados, y signos
+de pregunta amarillos al lado de los archivos y carpetas que git no está 
+siguiendo. RStudio también muestra la diferencia entre los archivos en las
+diferentes confirmaciones.
+
+```{block, type='callout'}
+## Tip: versionando salida descartable
+
+En general no querés versionar las salidas descartable (o los datos de solo 
+lectura). Hay que modificar el archivo `.gitignore` para decirle que ignore
+estos archivos y carpetas.
+```
+
+```{block, type='challenge'}
+## Desafio 2
+
+1. Crea una carpeta dentro del proyecto llamada `graphs`.
+2. Modifica el archivo `.gitignore` para que contenga `graphs` para
+que estas salidas descartables no sean versionadas. 
+
+>```{block, type='solution'}
+> ## Solución al Desafio 3
+>
+> Esto puede ser logrado con la linea de comando:
+> > $ mkdir graphs
+> > $ echo "graphs/" >> .gitignore
+>```
+
 ```
 
