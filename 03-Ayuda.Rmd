@@ -1,0 +1,165 @@
+# ¿Cómo obtener ayuda?
+
+## Archivos de ayuda
+
+Toda función de R tiene su página de ayuda. Hay varias formas de llegar a ellas.
+Dos de ellas consiste en escribir el signo de pregunta (?) seguido del nombre
+completo de la función. La otra en escribir `help()` y el nombre de la función
+
+```{r, eval=FALSE}
+?function_name
+help(function_name)
+```
+
+Esto muestra la página de ayuda como *html* en RStudio, o como texto plano en R.
+Cada página está dividida de la siguiente manera:
+
+ + Título: una breve descripción de la función
+ + Description: Una descripción un poco más amplia de lo que hace la función.
+ + Usage: muestra los argumentos que acepta la función.
+ + Arguments: listado de los argumentos, que significa cada unos y que tipo de
+ valores acepta
+ + Details: detalles importantes de los que hay que tener en cuenta. 
+ + Value: que tipo de datos devuelve la función.
+ + See also: otras funciones relacionadas que quizá sean útiles para el trabajo
+ que estamos realizando.
+ + Examples: ejemplos de uso de la función.
+ 
+Otras funciones pueden tener otras secciones, pero estas son las más importantes.
+Además, las 4 primeras secciones son obligatorias si desarrollamos nuestro
+paquete.
+
+```{block, type='rmdtip'}
+### Tip: Leer la ayuda
+
+Uno de los aspectos más impresionantes de R es el gran número de funciones. Por
+lo que es imposible acordarse de todas y como se usan. Por suerte, el tener
+páginas de ayuda tan detalladas significa que ¡no hace falta recordar todo!
+
+```
+
+## Operadores Especiales
+
+Para obtener ayuda para operadores especiales hay que usarlos entre comillas.
+
+```{r, eval=FALSE}
+?"+"
+```
+
+## Ayuda de paquetes
+
+Muchos paquetes vienen con "vignettes": son tutoriales o documentación de 
+ejemplo extendida. Sin ningún argumente `vignette()` listará todas las
+vignettes de todos los paquetes instalados; si especificamos el paquete, i.e.
+`vignette(package="package-name")`, nos dará un listado de la vignettes
+disponibles para `package-name`, y  `vignette("vignette-name")` abrirá la
+vignette especificada.
+
+
+## Si solo recordas una parte de la función
+
+Si no estás seguro en que paquete está la función, o como se escribe
+podés hacer una búsqueda difusa:
+
+
+```{r, eval=FALSE}
+??function_name
+```
+
+## Si no tenés idea donde empezar
+
+Si no sabés que función o paquete usar 
+[CRAN Task Views](http://cran.at.r-project.org/web/views)
+es una lista de paquetes agrupados en distintos campos de aplicación. Puede ser
+un buen punto de comienzo.
+
+## Cuando tu código no funciona: obtener ayuda de tus pares
+
+Si tenés problemas usando una función, 9 de cada 10 veces, otros han tenido el
+mismo problema y han sido respondidas en [Stack Overflow](http://stackoverflow.com/).
+Podés buscar usando el tag `[r]`. También podés buscar en la lista de 
+correo [R-Help-es](https://stat.ethz.ch/mailman/listinfo/r-help-es).
+
+Si no podés encontrar la respuesta, hay que preguntarla e incluir un 
+*ejemplo reproducible* de nuestro problema. Es muy importante incluirlo, ya que
+aumenta en varios ordenes de magnitud la probabilidad y velocidad de respuesta.
+Para incluir datos, la forma más sencilla (si los datos no son demasiados) es 
+usar la función `dput`:
+
+```{r, eval=FALSE}
+?dput
+```
+
+Va a crear un volcado de los datos con los que estás trabajando, de forma
+que puedan ser copiados y pegados en la consola de cualquira que quiera ayudar.
+Otro punto importante a incluir es el código de lo que hemos intentado hacer.
+Está muy mal visto preguntar "¿Cómo hago esto?" sin mostrar que hemos intentado
+resolverlo nosotros. Al menos incluir las respuestas relacionadas a nuestra
+pregunta y porque no nos sirven.
+
+
+```{r}
+sessionInfo()
+```
+
+
+Imprime en la consola la versión actual de R y también los paquetes que hemos 
+cargado. Esto puede ser muy útil para ayudar a reproducir y solucionar nuestros
+problemas.
+
+```{block, type='desafio'}
+## Desafio 1
+
+Lee la ayuda para la función 
+```
+
+
+> ## Challenge 1
+>
+> Look at the help for the `c` function. What kind of vector do you
+> expect you will create if you evaluate the following:
+> ```{r, eval=FALSE}
+> c(1, 2, 3)
+> c('d', 'e', 'f')
+> c(1, 2, 'f')`
+> ```
+> > ## Solution to Challenge 1
+> >
+> > The `c()` function creates a vector, in which all elements are the
+> > same type. In the first case, the elements are numeric, in the
+> > second, they are characters, and in the third they are characters:
+> > the numeric values "coerced" to be characters.
+> {: .solution}
+{: .challenge}
+
+> ## Challenge 2
+>
+> Look at the help for the `paste` function. You'll need to use this later.
+> What is the difference between the `sep` and `collapse` arguments?
+>
+> > ## Solution to Challenge 2
+> >
+> > Look at the help for the `paste` function. You'll need to use this later.
+> >
+> > ```{r, eval=FALSE}
+> > help("paste")
+> > ?paste
+> > ```
+> {: .solution}
+{: .challenge}
+
+> ## Challenge 3
+> Use help to find a function (and its associated parameters) that you could
+> use to load data from a csv file in which columns are delimited with "\t"
+> (tab) and the decimal point is a "." (period). This check for decimal
+> separator is important, especially if you are working with international
+> colleagues, because different countries have different conventions for the
+> decimal point (i.e. comma vs period).
+> hint: use `??csv` to lookup csv related functions.
+{: .challenge}
+
+## Other ports of call
+
+* [Quick R](http://www.statmethods.net/)
+* [RStudio cheat sheets](http://www.rstudio.com/resources/cheatsheets/)
+* [Cookbook for R](http://www.cookbook-r.com/)
