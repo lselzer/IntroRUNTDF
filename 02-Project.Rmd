@@ -18,7 +18,7 @@ Hay muchas razones por las cuales *SIEMPRE* deberían evitar esto:
 1. Es muy dificil cual es la versión original de tus datos y cual es la
 modificada;
 2. Se vuelve un lío porque mezcla archivos de varias extensiones juntos;
-3. Probablmente te tomará mucho tiempo encontrar el archivo que realmente buscas,
+3. Probablemente te tomará mucho tiempo encontrar el archivo que realmente buscas,
 y ver cuales son las figuras correctas y cual es el código que las genera;
 
 Un buen diseño de proyecto va a ser tu vida más fácil:
@@ -26,7 +26,7 @@ Un buen diseño de proyecto va a ser tu vida más fácil:
   + Te va a ayudar a mantener la integridad de tus datos;
   + Va a ser que sea más sencillo compartir tu código con alguien más 
   (Un compañero de laboratorio, colaborador, o supervisor);
-  + Te permite subir facilmente código con tu propuesta de manuscrito;
+  + Te permite subir fácilmente código con tu propuesta de manuscrito;
   + Hace que sea más fácil volver a un proyecto luego de dejarlo por un tiempo.
 
 ## Una posible solución
@@ -35,14 +35,14 @@ Afortunadamente, hay herramientas y paquetes que pueden ayudarte a manejar
 el trabajo de forma efectiva.
 
 Una de los aspectos más poderosos y útiles de RStudio es el manejo de proyectos.
-Hoy vamos a usarlo para crear un proyecto autocontenido y reproducible.
+Hoy vamos a usarlo para crear un proyecto auto-contenido y reproducible.
 
 ```{block, type='challenge'}
 ## Desafio: Crear un proyecto autocontenido
 
-Vamos a crear un proyecto autocontenido en RStudio:
+Vamos a crear un proyecto auto-contenido en RStudio:
 
-1. Hacer click en "File" en el menú, y luego en "New Project"
+1. Hacer clic en "File" en el menú, y luego en "New Project"
 2. Click en "New Directory"
 3. Click en "Empty Project"
 4. Escribir el nombre de la carpeta donde se guardará el proyecto, e.g.
@@ -52,7 +52,7 @@ Vamos a crear un proyecto autocontenido en RStudio:
 ```
 
 Ahora cuando iniciemos R en la carpeta del proyecto, o abramos el proyecto 
-con RStudio, todo nuestro trabajo en este proyecto va estar autocontenido en
+con RStudio, todo nuestro trabajo en este proyecto va estar auto-contenido en
 esta carpeta
 
 
@@ -68,13 +68,13 @@ sencillo:
 Esta es probablemente la meta más importante al configurar un proyecto. 
 Generalmente, los datos toman mucho tiempo o son caros de obtener. Al trabajar
 con ellos interactivamente (e.g. en Excel) donde pueden ser modificados,
-siginifica que nunca estás seguro de donde vienen los datos, o como 
-han sido moficcados desde su colección. Por es buena idea tratar los 
+significa que nunca estás seguro de donde vienen los datos, o como 
+han sido modificados desde su colección. Por es buena idea tratar los 
 datos como "solo-lectura"
 
 ## Limpieza de datos
 
-En muchos casos los datos estarán "sucios": es necesarios un preprocesado 
+En muchos casos los datos estarán "sucios": es necesarios un pre-procesado 
 significativo para que sean aceptados por R (o cualquier otro lenguaje de
 programación). Esto a veces es llamado "data munging". Es útil guardar estos
 scripts en una carpeta separada, y crear una segunda carpeta de datos 
@@ -88,7 +88,7 @@ debería poder ser regenerada a partir de tus scripts.
 Hay muchas formas de manejar estas salidas. Es útil tener un carpeta de 
 salida con diferentes sub-carpetas para cada análisis. Esto hace que sea
 más fácil encontrar los resultados, como muchos de los análisis son
-exploratorios y no terminan usandose en el proyecto final, y algunos
+exploratorios y no terminan usándose en el proyecto final, y algunos
 de los análisis se comparten entre proyectos.
 
 
@@ -103,8 +103,8 @@ proyecto.
 2. Poner los documentos de texto asociados con el proyecto una carpeta 
 llamada `doc`.
 3. Poner los datos "crudos" en una carpeta llamada `data`, y los archivos
-generados durante la limpieza en una caperta llamada `results`.
-4. Poner el codigo de fuente del proyecto y los programas en la carpeta
+generados durante la limpieza en una carpeta llamada `results`.
+4. Poner el código de fuente del proyecto y los programas en la carpeta
 `scr` y programas externos o compilados localmente en la carpeta  `bin`.
 5. Nombrar todos los archivos de forma que refleje su contenido o función.
 ```
@@ -113,7 +113,7 @@ generados durante la limpieza en una caperta llamada `results`.
 ## Tip: ProjectTemplate - una posible solución
 
 Una forma de automatizar el manejo de proyectos es instalar un paquete de
-terceros, `ProjectTemplate`. Este paquete va a configurar una estrucutra ideal
+terceros, `ProjectTemplate`. Este paquete va a configurar una estructura ideal
 para el manejo del proyecto. Es muy útil ya que permite tener el análisis de
 manera estructurada y organizada. En conjunto con la funcionalidad propia de 
 RStudio y Git vas a poder mantener un seguimiento de tu trabajo y ser capaz
@@ -123,18 +123,17 @@ de compartirlo con colaboradores.
 2. Carga el paquete.
 3. Inicializa el proyecto:
 
-> ```{r, eval=FALSE}
-> install.packages("ProjectTemplate")
-> library(ProjectTemplate)
-> create.project("../my_project", merge.strategy = "allow.non.conflict")
-> ```
+ ```{r, eval=FALSE}
+ install.packages("ProjectTemplate")
+ library(ProjectTemplate)
+ create.project("../my_project", merge.strategy = "allow.non.conflict")
+ ```
 
 
 Para más información de ProjectTemplate y sus funcionalidades vista el sitio
 web [ProjectTemplate](http://projecttemplate.net/index.html).
 
 
-```
 ```
 
 
@@ -220,3 +219,56 @@ que estas salidas descartables no sean versionadas.
 
 ```
 
+## Breve Introducción a Git
+
+El control de versión es un sistema que permite hacer backups de nuestro código
+y colaborar con otras personas de forma simple. Los primeros sistemas de 
+versionado datan de 1980. Desde entonces han sido mejorados en gran medida. Uno
+de los sistemas más populares es Git. En git, cada versión puede pensarse como
+una foto instantánea de los archivos y carpetas en ese momento. Cuando
+inicializamos git este crea una carpeta `.git` en nuestra carpeta de trabajo,
+dentro de esa carpeta hay una base de datos donde guarda esas instantáneas.
+
+Los archivos en git pueden tener dos estados básicos: con seguimiento y 
+sin seguimiento. Un archivo sin seguimiento no está dentro de git y por lo 
+tanto no sabe si ha sido modificado. En cambio, un archivo que esta siendo 
+seguido, git puede saber que ha cambiado desde la última vez fue "confirmado".
+Para que sea seguido el archivo, primero debemos añadirlo (*add*). En RStudio,
+basta con marcar la casilla al lado del archivo. Los archivos marcados 
+pasarán a tener una A verde. Y pasan a lo como area de preparación
+(*staging area*) y se dicen que están preparados. Cuando confirmamos (*commit*)
+los archivos que estaban en preparación pasan a ser parte de la instantánea 
+dentro de git. En cada confirmación debemos poner un mensaje corto, menos
+de 50 caracteres. El mensaje debe ser lo más descriptivo posible para saber
+que hemos cambiado. Además del mensaje, podemos incluir una descripción más
+larga. 
+
+Luego el ciclo se repite cada vez que modifiquemos los archivos. Es una buena
+práctica hacer solo un *commit* por archivo modificado, a menos que las
+modificaciones esten relacionadas.
+
+Por otro lado, podemos tener git en un servidor remoto. De forma que otros
+colaboradores puedan trabajar en el proyecto al mismo tiempo. Primero debemos
+subir los cambios que hicimos. Para configurar el servidor remoto debemos 
+entrar en el shell. Y escribir:
+
+```{bash, eval=FALSE}
+git remote add origin git@github.com:EstadisticaUNTDF/test.git
+```
+
+Con esto estamos diciendo a git que añada un servidor remoto llamado *origin*
+y a continuación le damos la *URL*.
+
+```{bash, eval=FALSE}
+git remote
+```
+
+Con este comando vemos cuales son nuestros servidores remotos. Y al utilizar 
+el botón de flecha verde (Push) en la pestaña de Git, enviamos nuestros cambios
+al servidor.
+
+Supongamos ahora que un colaborador ha estado trabajando en el código y ha
+subido sus cambios al repositorio remoto. Para obtener el nuevo código e
+integrarlo en nuestra versión local debemos hacer clic en la flecha azul 
+hacia abajo. De esta forma bajamos las últimas confirmaciones y las fusionamos
+con nuestro trabajo en caso que no haya conflictos.
