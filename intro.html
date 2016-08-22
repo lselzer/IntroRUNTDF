@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introducción a R</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Este libro es una introducción a R">
+  <meta name="generator" content="bookdown 0.1.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introducción a R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este libro es una introducción a R" />
+  <meta name="github-repo" content="lselzer/IntroRUNTDF" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introducción a R" />
+  
+  <meta name="twitter:description" content="Este libro es una introducción a R" />
+  
+
+<meta name="author" content="Luciano Selzer">
+
+<meta name="date" content="2016-08-22">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="proyectos.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/lesson.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> ¿Qué es R?</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#prerrequisitos"><i class="fa fa-check"></i><b>1.1</b> Prerrequisitos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdución</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#introduccion-a-rstudio"><i class="fa fa-check"></i><b>2.1</b> Introducción a RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#flujo-de-trabajo-con-rstudio"><i class="fa fa-check"></i><b>2.2</b> Flujo de trabajo con RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#introduccion-a-r"><i class="fa fa-check"></i><b>2.3</b> Introducción a R</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#r-como-calculadora"><i class="fa fa-check"></i><b>2.4</b> R como calculadora</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#funciones-matematicas"><i class="fa fa-check"></i><b>2.5</b> Funciones matemáticas</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#comparando-cosas"><i class="fa fa-check"></i><b>2.6</b> Comparando cosas</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#variables-y-asignacion"><i class="fa fa-check"></i><b>2.7</b> Variables y asignación</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#vectorizacion"><i class="fa fa-check"></i><b>2.8</b> Vectorización</a></li>
+<li class="chapter" data-level="2.9" data-path="intro.html"><a href="intro.html#manejando-el-entorno"><i class="fa fa-check"></i><b>2.9</b> Manejando el entorno</a></li>
+<li class="chapter" data-level="2.10" data-path="intro.html"><a href="intro.html#paquetes-r"><i class="fa fa-check"></i><b>2.10</b> Paquetes R</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="proyectos.html"><a href="proyectos.html"><i class="fa fa-check"></i><b>3</b> Manejo de Proyectos con RStudio</a><ul>
+<li class="chapter" data-level="3.1" data-path="proyectos.html"><a href="proyectos.html#introduccion"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="proyectos.html"><a href="proyectos.html#una-posible-solucion"><i class="fa fa-check"></i><b>3.2</b> Una posible solución</a></li>
+<li class="chapter" data-level="3.3" data-path="proyectos.html"><a href="proyectos.html#buenas-practicas-para-manejo-de-proyectos"><i class="fa fa-check"></i><b>3.3</b> Buenas prácticas para manejo de proyectos</a></li>
+<li class="chapter" data-level="3.4" data-path="proyectos.html"><a href="proyectos.html#tratar-los-datos-como-solo-lectura"><i class="fa fa-check"></i><b>3.4</b> Tratar los datos como solo lectura</a></li>
+<li class="chapter" data-level="3.5" data-path="proyectos.html"><a href="proyectos.html#limpieza-de-datos"><i class="fa fa-check"></i><b>3.5</b> Limpieza de datos</a></li>
+<li class="chapter" data-level="3.6" data-path="proyectos.html"><a href="proyectos.html#trata-la-salida-generada-como-descartable"><i class="fa fa-check"></i><b>3.6</b> Trata la salida generada como descartable</a></li>
+<li class="chapter" data-level="3.7" data-path="proyectos.html"><a href="proyectos.html#breve-introduccion-a-git"><i class="fa fa-check"></i><b>3.7</b> Breve Introducción a Git</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html"><i class="fa fa-check"></i><b>4</b> ¿Cómo obtener ayuda?</a><ul>
+<li class="chapter" data-level="4.1" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#archivos-de-ayuda"><i class="fa fa-check"></i><b>4.1</b> Archivos de ayuda</a></li>
+<li class="chapter" data-level="4.2" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#operadores-especiales"><i class="fa fa-check"></i><b>4.2</b> Operadores Especiales</a></li>
+<li class="chapter" data-level="4.3" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#ayuda-de-paquetes"><i class="fa fa-check"></i><b>4.3</b> Ayuda de paquetes</a></li>
+<li class="chapter" data-level="4.4" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#si-solo-recordas-una-parte-de-la-funcion"><i class="fa fa-check"></i><b>4.4</b> Si solo recordas una parte de la función</a></li>
+<li class="chapter" data-level="4.5" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#si-no-tenes-idea-donde-empezar"><i class="fa fa-check"></i><b>4.5</b> Si no tenés idea donde empezar</a></li>
+<li class="chapter" data-level="4.6" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#cuando-tu-codigo-no-funciona-obtener-ayuda-de-tus-pares"><i class="fa fa-check"></i><b>4.6</b> Cuando tu código no funciona: obtener ayuda de tus pares</a></li>
+<li class="chapter" data-level="4.7" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#otras-fuentes-de-ayuda"><i class="fa fa-check"></i><b>4.7</b> Otras fuentes de ayuda</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción a R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1">
+<h1><span class="header-section-number">Capítulo 2</span> Introdución</h1>
+<p>Trabajar con la interfaz de gráfica de R es un poco incómodo (poniendolo suavemente). Por lo que se han desarrollado varios entornos de desarrollo<br />
+integrado (IDE por sus siglas en inglés) que facilitan su uso. Una de las más trabajadas y pulidas es RStudio.</p>
+<div id="introduccion-a-rstudio" class="section level2">
+<h2><span class="header-section-number">2.1</span> Introducción a RStudio</h2>
+<p>RStudio es una interfaz de desarrollo integrada, gratis y de código abierto. Posee un editor de código, funciona en múltiples plataformas (incluyendo servidores) y tiene muchas ventajas como integración con control de versión y manejo de proyectos.</p>
+<p><strong>Disposición Básica</strong></p>
+<p>Cuando abres RStudio por primera vez verás tres paneles:</p>
+<ul>
+<li>La consola interactiva de R (a la izquierda)</li>
+<li>El Entorno/Historial, en inglés Environment/History (en pestañas en la parte superior derecha)</li>
+<li>Archivos/Gráficos/Paquetes/Ayuda/Visualizador, también en inglés Files/Plots/Packages/Help/Viewer (en la parte inferior derecha)</li>
+</ul>
+<p>Una vez que abre un archivo, como por ejemplo un script de R, un panel de edición se abre en la parte superior izquierda.</p>
+</div>
+<div id="flujo-de-trabajo-con-rstudio" class="section level2">
+<h2><span class="header-section-number">2.2</span> Flujo de trabajo con RStudio</h2>
+<p>Hay dos maneras básicas de trabajar con RStudio.</p>
+<ol style="list-style-type: decimal">
+<li>Probar y jugar dentro de la consola interactiva y luego copiar el código a un archivo .R para ejecutar más tarde.</li>
+</ol>
+<ul>
+<li>Funciona bien cuando se hacen pequeñas pruebas y recién se comienza.</li>
+<li>Pero rápidamente se vuelve laborioso.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Empezar a escribir un archivo .R y luego usar el comando / atajo de RStudio para ejecutar la línea actual o las líneas seleccionadas en la consola.</li>
+</ol>
+<ul>
+<li>Es la mejor forma de empezar; así todo el código queda guardado para más tarde</li>
+<li>Podrás ejecutar el archivo desde RStudio o usando la función de R <code>source()</code>.</li>
+</ul>
+<div class="rmdtip">
+<h2 id="tip-ejecutando-partes-de-tu-codigo">
+Tip: Ejecutando partes de tu código
+</h2>
+<p>
+RStudio tiene una gran flexibilidad al ejecutar código dentro de la ventana de edición. Hay botones, menues y atajos de teclado. Para ejectuar la línea actual podés 1. hacer click en el botón <code>Run</code> arriba del panel de edición, o 2. Seleccionar “Run Lines” desde el menú “Code”, o 3. apretar Ctrl+Enter en Windows o Linux o Command+Enter en OS X (Este atajo también puede verse dejando el puntero del mouse sobre el botón <code>Run</code>). Para ejecutar un bloque de código, seleccionálo y después solo presiona <code>Run</code>. Si has modificado una parte del bloque que has ejecutado reción no hay necesidad de reseleccionarlo y darle <code>Run</code>, podés usar el botón a continuación, <code>Re-run the previous region</code>. Esto va a ejecutar el bloque de código previo incluyendo las modificaciones que has hecho.
+</p>
+</div>
+</div>
+<div id="introduccion-a-r" class="section level2">
+<h2><span class="header-section-number">2.3</span> Introducción a R</h2>
+<p>Una gran parte del tiempo en R se pasa en la consola interactiva. Ahí es donde se corre el código y puede ser un entorno útil para probar ideas antes de escribirlas en un script de R. La consola de RStudio es la misma que si ejecutasen <code>R</code> en la linea de comando o la interfaz gráfica de R (R-GUI).</p>
+<p>Cada vez que abran la consola van a ver un montón de información y abajo aparece un signo mayor “&gt;” seguido de un cursor parpadeante. Opera en la forma como cualquier otra línea de comando. REPL por sus siglas en inglés: Read, evaluate, print, loop. Leer, evaluar, imprimir, buclear. Uno ingresa órdenes o comandos, R trata de ejecutarlos y luego imprime el resultado. Aunque a veces algunas funciones no imprimen nada.</p>
+</div>
+<div id="r-como-calculadora" class="section level2">
+<h2><span class="header-section-number">2.4</span> R como calculadora</h2>
+<p>Lo más simple que se puede hacer con R es aritmética:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> +<span class="st"> </span><span class="dv">100</span></code></pre></div>
+<p>[1] 101</p>
+<p>Y R va a impirmir la respuesta, precedida por un “[1]”. No se preocupen por esto ahora, lo vamos a ver más adelante. Por ahora piensen que está indicando la salida.</p>
+<p>Si introducen un comando de forma incompleta, R va esperar que lo terminen</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> +</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">+</code></pre></div>
+<p>Cada vez que apriten Enter y la consola muestre un “+” en vez de “&gt;”, es que está esperando que terminen el comando. Si quieren cancelar el comando solo hay que presionar “Esc” y la consola volverá a mostrar el prompt “&gt;”.</p>
+<div class="callout">
+<h2 id="tip-cancelando-comandos">
+Tip: Cancelando comandos
+</h2>
+<p>
+Si estás usando R desde la linea de comando en vez de dentro de RStudio, hay que presionar <code>Ctrl+C</code> en vez de <code>Esc</code> para cancelar el comando. Esto también se aplica a usuarios de Mac también.
+</p>
+<p>
+Cancelar un comando no es útil solamente para anular comandos incompletos: también podés cancelar una computación que R está ejecutando (por ejemplo, si está tomando demasiado tiempo), o para eliminar el código que estás escribiendo actualmente.
+</p>
+</div>
+<p>Cuando se usa R como calculadora, el orden las operaciones es el mismo que aprendieron en la escuela.</p>
+<p>De mayor a menor precedencia:</p>
+<ul>
+<li>Paréntesis: <code>(</code>, <code>)</code></li>
+<li>Exponentes: <code>^</code> o <code>**</code></li>
+<li>División: <code>/</code></li>
+<li>Multiplicación: <code>*</code></li>
+<li>Adición: <code>+</code></li>
+<li>Substracción: <code>-</code></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">3</span> +<span class="st"> </span><span class="dv">5</span> *<span class="st"> </span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 13</code></pre>
+<p>Usa paréntesis para agrupar operaciones de manera de forzar el orden de evaluación si difiera de la por defecto, o para aclarar cual es tu intención.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">3</span> +<span class="st"> </span><span class="dv">5</span>) *<span class="st"> </span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 16</code></pre>
+<p>Puede volverse pesado si se usa cuando no se necesita, pero a veces clarifica tus intenciones. Recuerda que otros podrían leer tu código.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">3</span> +<span class="st"> </span>(<span class="dv">5</span> *<span class="st"> </span>(<span class="dv">2</span> ^<span class="st"> </span><span class="dv">2</span>))) <span class="co"># difícil de leer</span>
+<span class="dv">3</span> +<span class="st"> </span><span class="dv">5</span> *<span class="st"> </span><span class="dv">2</span> ^<span class="st"> </span><span class="dv">2</span>       <span class="co"># claro, si recordás las reglas</span>
+<span class="dv">3</span> +<span class="st"> </span><span class="dv">5</span> *<span class="st"> </span>(<span class="dv">2</span> ^<span class="st"> </span><span class="dv">2</span>)     <span class="co"># si olvidás algunas reglas esto puede ayudar.</span></code></pre></div>
+<p>El texto después de cada linea de código es llamado “comentario”. Cualquier cosa que este después del símbolo numeral o hash (<code>#</code>) es ignorado por R cuando ejecuta el código.</p>
+<p>Los números muy grandes o pequeños se imprimen en notación científica:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span>/<span class="dv">10000</span></code></pre></div>
+<pre><code>## [1] 2e-04</code></pre>
+<p>que es una abreviatura de multiplicar por <code>10^XX</code>“. Por lo que <code>2e-4</code> es una abreviatura de <code>2 * 10^(-4)</code>.</p>
+<p>Uno mismo puede entrar números en notación científica:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="fl">5e3</span> <span class="co">#No hay menos aquí</span></code></pre></div>
+<pre><code>## [1] 5000</code></pre>
+</div>
+<div id="funciones-matematicas" class="section level2">
+<h2><span class="header-section-number">2.5</span> Funciones matemáticas</h2>
+<p>R tiene muchas funciones matemáticas incorporadas. Para llamar una función simplemente escribimos su nombre, seguido por paréntesis de apertura y cierre. Cualquier cosa dentro de los paréntesis es llamado argumentos de la función:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sin</span>(<span class="dv">1</span>)  <span class="co"># funciones trigonométricas</span></code></pre></div>
+<pre><code>## [1] 0.841471</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">1</span>) <span class="co"># logaritmo natural</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log10</span>(<span class="dv">10</span>) <span class="co"># logaritmo en base 10</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="fl">0.5</span>) <span class="co"># e^(1/2)</span></code></pre></div>
+<pre><code>## [1] 1.648721</code></pre>
+<p>No se preocupen por recordar todas las funciones en R. Se pueden buscar en Google, o si recuerdan como comienza el nombre de la función, pueden presionar la tecla <code>Tab</code> para usar la función de autocompletado de RStudio.</p>
+<p>Esta es una de las ventajas de RStudio sobre R solo, tiene la función de autocompletar que permiten que sea más fácil buscar funciones, sus argumentos, y los valores que pueden tomar.</p>
+<p>Escribiendo un signo de pregunta <code>?</code> antes del nombre la funcion abrirá la página de ayuda de esa función. Además de mostrar una descripción detallada de la misma, sus argumentos, y los valores que devuelve, al final de la página hay ejemplos que muestran brevemente como se puede usar la función.</p>
+</div>
+<div id="comparando-cosas" class="section level2">
+<h2><span class="header-section-number">2.6</span> Comparando cosas</h2>
+<p>También podemos hacer comparaciones en R:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> ==<span class="st"> </span><span class="dv">1</span> <span class="co"># igualdad (notar que son dos signos igual, se lee como &quot;es igual a&quot;)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> !=<span class="st"> </span><span class="dv">2</span> <span class="co"># desiguldad (leer como &quot;no es igual a&quot;)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> &lt;<span class="st"> </span><span class="dv">2</span> <span class="co"># menor que</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> &lt;=<span class="st"> </span><span class="dv">1</span> <span class="co"># menor que o igual que</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> &gt;<span class="st"> </span><span class="dv">0</span> <span class="co"># mayor que</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> &gt;=<span class="st"> </span>-<span class="dv">9</span> <span class="co"># mayor que o igual que</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="callout">
+<h2 id="tip-comparando-numeros">
+Tip: Comparando números
+</h2>
+<p>
+Un advertencia acerca de la comparación de números: nunca usar <code>==</code> para comparar dos números a menos que sean integers (un tipo de data que se usa para representar números enteros específicamente).
+</p>
+<p>
+Las computadoras solo pueden representar números decimales con un cierto grado de precisión. Por lo que dos números que cuando son impresos por R se ven iguales, pueden tener representaciones subyacentes diferentes y por lo tanto ser diferentes por un pequeño margen de error (llamado <em>Machine numeric tolerance</em>)
+</p>
+<p>
+En su lugar, deberías usar la función <code>all.equal</code>
+</p>
+<p>
+Para más información, leer: <a href="http://floating-point-gui.de">http://floating-point-gui.de/</a>
+</p>
+</div>
+</div>
+<div id="variables-y-asignacion" class="section level2">
+<h2><span class="header-section-number">2.7</span> Variables y asignación</h2>
+<p>Podemos guardar los valores en variales usando el operador de asignación <code>&lt;-</code>, de esta forma:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">1</span>/<span class="dv">40</span></code></pre></div>
+<p>Notá que cuando se asigna no se imprime el valor. En cambio, lo almacenamos para después en algo llamado <strong>variable</strong>. Ahora <code>x</code>contiene el <strong>valor</strong> <code>0.025</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x</code></pre></div>
+<pre><code>## [1] 0.025</code></pre>
+<p>Más precisamente, el valor guardado es una <em>aproximanción decimal</em> a esta fracción llamado <a href="https://es.wikipedia.org/wiki/Coma_flotante">número de coma flotante</a>.</p>
+<p>Mirá en las pestaña <code>Environment</code> en los paneles de RStudio, y ahí verás que<code>x</code> y su valor han aparecido. Nuestra variable <code>x</code> puede ser usada en lugar de un número en cualquiear cálculo donde se espere un número:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(x)</code></pre></div>
+<pre><code>## [1] -3.688879</code></pre>
+<p>Las variables también pueden ser reasignadas:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">100</span></code></pre></div>
+<p><code>x</code> tenía el valor 0.025 y ahora tiene el valor 100.</p>
+<p>La asignación de valores puede contener la variable que esta siendo asignada:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span>x +<span class="st"> </span><span class="dv">1</span> <span class="co"># notar como RStudio actualiza la descrición de x en la pestaña Environment</span></code></pre></div>
+<p>La parte derecha de la asignación puede ser cualquier expresión válida de R. La parte derecha es <em>evaluada completamente</em> antes de que la asignación ocurra.</p>
+<p>Los nombres de la variables pueden contener letras, números, guiones bajos y puntos. No pueden empezar con un número ni pueden contener espacioes. Distintas personas usan distintas convenciones para nombrar variables con nombres largos, incluidos:</p>
+<ul>
+<li>puntos.entre.palabras</li>
+<li>guiones_bajos_entre_palabras</li>
+<li>camelCaseParaSepararPalabras</li>
+</ul>
+<p>Cual usar es una decisión individual (o del proyecto), pero hay que ser <strong>consistente</strong></p>
+<p>También se puede usar el símbolo <code>=</code>para asignar</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">1</span>/<span class="dv">40</span></code></pre></div>
+<p>Pero esto es mucho menos común entre los usuarios de R. Lo más es importante es <strong>ser consistente</strong> con el operador que uses. Ocasionalmente, hay lugares donde es menos confuso usar <code>&lt;-</code> que <code>=</code>, y es el símbolo más usado en la comunidad. Por lo que la recomendación es usar <code>&lt;-</code>. Además, en Rstudio hay un atajo de teclado para insertar la asignación: hay que presionar <code>Alt+-</code>.</p>
+</div>
+<div id="vectorizacion" class="section level2">
+<h2><span class="header-section-number">2.8</span> Vectorización</h2>
+<p>Una consideración final de lo que hay estar atento es que R está <em>vectorizado</em>, lo que significa que las variables y funciones pueden tener vectores como valores. Por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span>:<span class="dv">5</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span>^(<span class="dv">1</span>:<span class="dv">5</span>)</code></pre></div>
+<pre><code>## [1]  2  4  8 16 32</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">5</span>
+<span class="dv">2</span>^x</code></pre></div>
+<pre><code>## [1]  2  4  8 16 32</code></pre>
+<p>Esto es muy poderoso; lo vamos a discutir en profundidad más adelante.</p>
+</div>
+<div id="manejando-el-entorno" class="section level2">
+<h2><span class="header-section-number">2.9</span> Manejando el entorno</h2>
+<p>Hay algunas funciones muy útiles para interactuar con la sesión de R.</p>
+<p><code>ls</code> listará todas los objetos (funciones y variables) almacenados en el entorno global (tu sesión de trabajo en R)</p>
+<div class="callout">
+<h2 id="tip-objetos-ocultos">
+Tip: objetos ocultos
+</h2>
+<p>
+<code>ls</code> ocultará cualquier objeto cuyo nombre empiece con un punto “.” por defecto. Para listar todos los objetos, hay que tipear <code>ls(all.names=TRUE)</code>.
+</p>
+</div>
+<p>Notar que aquí no le dimos ningún argumento a <code>ls</code>, pero igual necesitamos usar los paréntesis para decirle a R que llame a la función.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ls</code></pre></div>
+<pre><code>## function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE, 
+##     pattern, sorted = TRUE) 
+## {
+##     if (!missing(name)) {
+##         pos &lt;- tryCatch(name, error = function(e) e)
+##         if (inherits(pos, &quot;error&quot;)) {
+##             name &lt;- substitute(name)
+##             if (!is.character(name)) 
+##                 name &lt;- deparse(name)
+##             warning(gettextf(&quot;%s converted to character string&quot;, 
+##                 sQuote(name)), domain = NA)
+##             pos &lt;- name
+##         }
+##     }
+##     all.names &lt;- .Internal(ls(envir, all.names, sorted))
+##     if (!missing(pattern)) {
+##         if ((ll &lt;- length(grep(&quot;[&quot;, pattern, fixed = TRUE))) &amp;&amp; 
+##             ll != length(grep(&quot;]&quot;, pattern, fixed = TRUE))) {
+##             if (pattern == &quot;[&quot;) {
+##                 pattern &lt;- &quot;\\[&quot;
+##                 warning(&quot;replaced regular expression pattern &#39;[&#39; by  &#39;\\\\[&#39;&quot;)
+##             }
+##             else if (length(grep(&quot;[^\\\\]\\[&lt;-&quot;, pattern))) {
+##                 pattern &lt;- sub(&quot;\\[&lt;-&quot;, &quot;\\\\\\[&lt;-&quot;, pattern)
+##                 warning(&quot;replaced &#39;[&lt;-&#39; by &#39;\\\\[&lt;-&#39; in regular expression pattern&quot;)
+##             }
+##         }
+##         grep(pattern, all.names, value = TRUE)
+##     }
+##     else all.names
+## }
+## &lt;bytecode: 0x3700630&gt;
+## &lt;environment: namespace:base&gt;</code></pre>
+<p>Podés usar <code>rm</code> para eliminar objetos que no sean necesarios:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(x)</code></pre></div>
+<p>Si tenés muchos objetos en tu entorno y querés borrar todos ellos, podés pasar el resultado de <code>ls</code> como argumento de la función <code>rm</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(<span class="dt">list =</span> <span class="kw">ls</span>())</code></pre></div>
+<p>En este caso hemos combinado las dos. Como en el orden de las operaciones, cualquier cosa dentro de los paréntesis es evaluada primero.</p>
+<p>En este caso hemos especificado que el resultado de <code>ls</code> sea usado por el argumento <code>list</code> en <code>rm</code>. Cuando asignamos valores a argumentos por nombre, ¡<strong>hay que</strong> usar el operardor <code>=</code>!</p>
+<p>Si en cambio se usa <code>&lt;-</code>, podrían haber efectos secundarios no intencionales, o un mensaje de error:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(list &lt;-<span class="st"> </span><span class="kw">ls</span>())</code></pre></div>
+<pre><code>## Error in rm(list &lt;- ls()): ... must contain names or character strings</code></pre>
+<div class="callout">
+<h2 id="tip-warnings-vs-errors">
+Tip: Warnings vs Errors
+</h2>
+<p>
+¡Presten atención cuando R hace algo inesperado! R tira errores, como el de arriba, cuando no puede proceder con un cálculo. Los <em>Warnings</em> (advertencias) por otro lado generalmente significa que la función se ejecutó, pero que probablemente no ha funcionado como se esperaba.
+</p>
+<p>
+En ambos casos, el mensaje que imprime R generalmente contiene pista de como arreglar el problema. Aunque a veces pueden ser algo crípticos y requieran cierta experiencia saber que es lo que está pasando.
+</p>
+</div>
+</div>
+<div id="paquetes-r" class="section level2">
+<h2><span class="header-section-number">2.10</span> Paquetes R</h2>
+<p>Los paquetes de R son colecciones de funciones o a veces datos, que son justamente empaquetadas. Los paquetes añaden funciones que no están presentes en R. Al momento de la escritura haya más de 8500 paquetes en CRAN (the comprehensive R archive network). Y muchos más en otros repositorios como GitHub. R y RStudio tienen funcionalidades para manejar los paquetes</p>
+<ul>
+<li>Para ver que paquetes están instalados tipear: <code>installed.packages()</code></li>
+<li>Para instalar paquetes tipear <code>install.packages(&quot;packagename&quot;)</code>, donde <code>packagename</code> es el nombre del paquete, entre comillas.</li>
+<li>Para actualizar los paquetes instalados, tipear <code>update.packages()</code></li>
+<li>Para eliminar un paquete tipear <code>remove.packages(&quot;packagename&quot;)</code></li>
+<li>Para usar un paquete en la sesión actual tipear <code>library(packagename)</code></li>
+</ul>
+<blockquote>
+<h2 id="challenge-1"><span class="header-section-number">2.10</span> Challenge 1</h2>
+<p>Which of the following are valid R variable names?</p>
+<pre><code>min_height
+max.height
+_age
+.mass
+MaxLength
+min-length
+2widths
+celsius2kelvin</code></pre>
+<p>{: .r}</p>
+<blockquote>
+<h2 id="solution-to-challenge-1"><span class="header-section-number">2.10</span> Solution to challenge 1</h2>
+<p>The following can be used as R variables:</p>
+<pre><code>min_height
+max.height
+MaxLength
+celsius2kelvin</code></pre>
+<p>{: .r}</p>
+<p>The following creates a hidden variable:</p>
+<pre><code>.mass</code></pre>
+<p>{: .r}</p>
+<p>The following will not be able to be used to create a variable</p>
+<pre><code>_age
+min-length
+2widths</code></pre>
+<p>{: .r} {: .solution} {: .challenge}</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<h2 id="challenge-2"><span class="header-section-number">2.10</span> Challenge 2</h2>
+<p>What will be the value of each variable after each statement in the following program?</p>
+<pre><code>mass &lt;- 47.5
+age &lt;- 122
+mass &lt;- mass * 2.3
+age &lt;- age - 20</code></pre>
+<p>{: .r}</p>
+<blockquote>
+<h2 id="solution-to-challenge-2"><span class="header-section-number">2.10</span> Solution to challenge 2</h2>
+<pre><code>mass &lt;- 47.5</code></pre>
+<p>{: .r} This will give a value of 47.5 for the variable mass</p>
+<pre><code>age &lt;- 122</code></pre>
+<p>{: .r} This will give a value of 122 for the variable age</p>
+<pre><code>mass &lt;- mass * 2.3</code></pre>
+<p>{: .r} This will multiply the existing value of 47.5 by 2.3 to give a new value of 109.25 to the variable mass.</p>
+<pre><code>age &lt;- age - 20</code></pre>
+<p>{: .r} This will subtract 20 from the existing value of 122 to give a new value of 102 to the variable age. {: .solution} {: .challenge}</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<h2 id="challenge-3"><span class="header-section-number">2.10</span> Challenge 3</h2>
+<p>Run the code from the previous challenge, and write a command to compare mass to age. Is mass larger than age?</p>
+<blockquote>
+<h2 id="solution-to-challenge-3"><span class="header-section-number">2.10</span> Solution to challenge 3</h2>
+<p>One way of answering this question in R is to use the <code>&gt;</code> to set up the following:</p>
+<pre><code>mass &gt; age</code></pre>
+<p>{: .r}</p>
+<pre><code>[1] TRUE</code></pre>
+<p>{: .output} This should yield a boolean value of TRUE since 109.25 is greater than 102. {: .solution} {: .challenge}</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<h2 id="challenge-4"><span class="header-section-number">2.10</span> Challenge 4</h2>
+<p>Clean up your working environment by deleting the mass and age variables.</p>
+<blockquote>
+<h2 id="solution-to-challenge-4"><span class="header-section-number">2.10</span> Solution to challenge 4</h2>
+<p>We can use the <code>rm</code> command to accomplish this task</p>
+<pre><code>rm(age, mass)</code></pre>
+<p>{: .r} {: .solution} {: .challenge}</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<h2 id="challenge-5"><span class="header-section-number">2.10</span> Challenge 5</h2>
+<p>Install the following packages: <code>ggplot2</code>, <code>plyr</code>, <code>gapminder</code></p>
+<blockquote>
+<h2 id="solution-to-challenge-5"><span class="header-section-number">2.10</span> Solution to challenge 5</h2>
+<p>We can use the <code>install.packages()</code> command to install the required packages. We can also install them in one go like so:</p>
+<pre><code>install.packages(c(&quot;ggplot2&quot;, &quot;plyr&quot;, &quot;gapminder&quot;))</code></pre>
+<p>{: .r} {: .solution} {: .challenge}</p>
+</blockquote>
+</blockquote>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="proyectos.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introducción a R</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Este libro es una introducción a R">
+  <meta name="generator" content="bookdown 0.1.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introducción a R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este libro es una introducción a R" />
+  <meta name="github-repo" content="lselzer/IntroRUNTDF" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introducción a R" />
+  
+  <meta name="twitter:description" content="Este libro es una introducción a R" />
+  
+
+<meta name="author" content="Luciano Selzer">
+
+<meta name="date" content="2016-08-22">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="intro.html">
+<link rel="next" href="como-obtener-ayuda.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/lesson.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> ¿Qué es R?</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#prerrequisitos"><i class="fa fa-check"></i><b>1.1</b> Prerrequisitos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdución</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#introduccion-a-rstudio"><i class="fa fa-check"></i><b>2.1</b> Introducción a RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#flujo-de-trabajo-con-rstudio"><i class="fa fa-check"></i><b>2.2</b> Flujo de trabajo con RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#introduccion-a-r"><i class="fa fa-check"></i><b>2.3</b> Introducción a R</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#r-como-calculadora"><i class="fa fa-check"></i><b>2.4</b> R como calculadora</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#funciones-matematicas"><i class="fa fa-check"></i><b>2.5</b> Funciones matemáticas</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#comparando-cosas"><i class="fa fa-check"></i><b>2.6</b> Comparando cosas</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#variables-y-asignacion"><i class="fa fa-check"></i><b>2.7</b> Variables y asignación</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#vectorizacion"><i class="fa fa-check"></i><b>2.8</b> Vectorización</a></li>
+<li class="chapter" data-level="2.9" data-path="intro.html"><a href="intro.html#manejando-el-entorno"><i class="fa fa-check"></i><b>2.9</b> Manejando el entorno</a></li>
+<li class="chapter" data-level="2.10" data-path="intro.html"><a href="intro.html#paquetes-r"><i class="fa fa-check"></i><b>2.10</b> Paquetes R</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="proyectos.html"><a href="proyectos.html"><i class="fa fa-check"></i><b>3</b> Manejo de Proyectos con RStudio</a><ul>
+<li class="chapter" data-level="3.1" data-path="proyectos.html"><a href="proyectos.html#introduccion"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="proyectos.html"><a href="proyectos.html#una-posible-solucion"><i class="fa fa-check"></i><b>3.2</b> Una posible solución</a></li>
+<li class="chapter" data-level="3.3" data-path="proyectos.html"><a href="proyectos.html#buenas-practicas-para-manejo-de-proyectos"><i class="fa fa-check"></i><b>3.3</b> Buenas prácticas para manejo de proyectos</a></li>
+<li class="chapter" data-level="3.4" data-path="proyectos.html"><a href="proyectos.html#tratar-los-datos-como-solo-lectura"><i class="fa fa-check"></i><b>3.4</b> Tratar los datos como solo lectura</a></li>
+<li class="chapter" data-level="3.5" data-path="proyectos.html"><a href="proyectos.html#limpieza-de-datos"><i class="fa fa-check"></i><b>3.5</b> Limpieza de datos</a></li>
+<li class="chapter" data-level="3.6" data-path="proyectos.html"><a href="proyectos.html#trata-la-salida-generada-como-descartable"><i class="fa fa-check"></i><b>3.6</b> Trata la salida generada como descartable</a></li>
+<li class="chapter" data-level="3.7" data-path="proyectos.html"><a href="proyectos.html#breve-introduccion-a-git"><i class="fa fa-check"></i><b>3.7</b> Breve Introducción a Git</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html"><i class="fa fa-check"></i><b>4</b> ¿Cómo obtener ayuda?</a><ul>
+<li class="chapter" data-level="4.1" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#archivos-de-ayuda"><i class="fa fa-check"></i><b>4.1</b> Archivos de ayuda</a></li>
+<li class="chapter" data-level="4.2" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#operadores-especiales"><i class="fa fa-check"></i><b>4.2</b> Operadores Especiales</a></li>
+<li class="chapter" data-level="4.3" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#ayuda-de-paquetes"><i class="fa fa-check"></i><b>4.3</b> Ayuda de paquetes</a></li>
+<li class="chapter" data-level="4.4" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#si-solo-recordas-una-parte-de-la-funcion"><i class="fa fa-check"></i><b>4.4</b> Si solo recordas una parte de la función</a></li>
+<li class="chapter" data-level="4.5" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#si-no-tenes-idea-donde-empezar"><i class="fa fa-check"></i><b>4.5</b> Si no tenés idea donde empezar</a></li>
+<li class="chapter" data-level="4.6" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#cuando-tu-codigo-no-funciona-obtener-ayuda-de-tus-pares"><i class="fa fa-check"></i><b>4.6</b> Cuando tu código no funciona: obtener ayuda de tus pares</a></li>
+<li class="chapter" data-level="4.7" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#otras-fuentes-de-ayuda"><i class="fa fa-check"></i><b>4.7</b> Otras fuentes de ayuda</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción a R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="proyectos" class="section level1">
+<h1><span class="header-section-number">Capítulo 3</span> Manejo de Proyectos con RStudio</h1>
+<div id="introduccion" class="section level2">
+<h2><span class="header-section-number">3.1</span> Introducción</h2>
+<p>El proceso científico es naturalmente incremental, y muchos proyectos empiezan como algunas notas, algo de código, luego un manuscrito y eventualmente todo queda mezclado.</p>
+<blockquote class="twitter-tweet">
+<p>
+Managing your projects in a reproducible fashion doesn’t just make your science reproducible, it makes your life easier.
+</p>
+— Vince Buffalo (<span class="citation">(<span class="citeproc-not-found" data-reference-id="vsbuffalo"><strong>???</strong></span>)</span>) <a href="https://twitter.com/vsbuffalo/status/323638476153167872">April 15, 2013</a>
+</blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>La mayoría de la gente organiza sus proyectos así:</p>
+<div class="figure">
+<img src="../fig/bad_layout.png" alt="" />
+
+</div>
+<p>Hay muchas razones por las cuales <em>SIEMPRE</em> deberían evitar esto:</p>
+<ol style="list-style-type: decimal">
+<li>Es muy dificil cual es la versión original de tus datos y cual es la modificada;</li>
+<li>Se vuelve un lío porque mezcla archivos de varias extensiones juntos;</li>
+<li>Probablemente te tomará mucho tiempo encontrar el archivo que realmente buscas, y ver cuales son las figuras correctas y cual es el código que las genera;</li>
+</ol>
+<p>Un buen diseño de proyecto va a ser tu vida más fácil:</p>
+<ul>
+<li>Te va a ayudar a mantener la integridad de tus datos;</li>
+<li>Va a ser que sea más sencillo compartir tu código con alguien más (Un compañero de laboratorio, colaborador, o supervisor);</li>
+<li>Te permite subir fácilmente código con tu propuesta de manuscrito;</li>
+<li>Hace que sea más fácil volver a un proyecto luego de dejarlo por un tiempo.</li>
+</ul>
+</div>
+<div id="una-posible-solucion" class="section level2">
+<h2><span class="header-section-number">3.2</span> Una posible solución</h2>
+<p>Afortunadamente, hay herramientas y paquetes que pueden ayudarte a manejar el trabajo de forma efectiva.</p>
+<p>Una de los aspectos más poderosos y útiles de RStudio es el manejo de proyectos. Hoy vamos a usarlo para crear un proyecto auto-contenido y reproducible.</p>
+<div class="challenge">
+<h2 id="desafio-crear-un-proyecto-autocontenido">
+Desafio: Crear un proyecto autocontenido
+</h2>
+<p>
+Vamos a crear un proyecto auto-contenido en RStudio:
+</p>
+<ol style="list-style-type: decimal">
+<li>
+Hacer clic en “File” en el menú, y luego en “New Project”
+</li>
+<li>
+Click en “New Directory”
+</li>
+<li>
+Click en “Empty Project”
+</li>
+<li>
+Escribir el nombre de la carpeta donde se guardará el proyecto, e.g. “mi_proyecto”
+</li>
+<li>
+Asegurarse de que la casilla “Create a git repository” este seleccionada.
+</li>
+<li>
+Click en el botón “Create Project”
+</li>
+</ol>
+</div>
+<p>Ahora cuando iniciemos R en la carpeta del proyecto, o abramos el proyecto con RStudio, todo nuestro trabajo en este proyecto va estar auto-contenido en esta carpeta</p>
+</div>
+<div id="buenas-practicas-para-manejo-de-proyectos" class="section level2">
+<h2><span class="header-section-number">3.3</span> Buenas prácticas para manejo de proyectos</h2>
+<p>Aunque no hay una manera que sea la “mejor” para diseñar un proyecto, si hay alguno lineamientos principales a seguir que harán el manejo de proyecto más sencillo:</p>
+</div>
+<div id="tratar-los-datos-como-solo-lectura" class="section level2">
+<h2><span class="header-section-number">3.4</span> Tratar los datos como solo lectura</h2>
+<p>Esta es probablemente la meta más importante al configurar un proyecto. Generalmente, los datos toman mucho tiempo o son caros de obtener. Al trabajar con ellos interactivamente (e.g. en Excel) donde pueden ser modificados, significa que nunca estás seguro de donde vienen los datos, o como han sido modificados desde su colección. Por es buena idea tratar los datos como “solo-lectura”</p>
+</div>
+<div id="limpieza-de-datos" class="section level2">
+<h2><span class="header-section-number">3.5</span> Limpieza de datos</h2>
+<p>En muchos casos los datos estarán “sucios”: es necesarios un pre-procesado significativo para que sean aceptados por R (o cualquier otro lenguaje de programación). Esto a veces es llamado “data munging”. Es útil guardar estos scripts en una carpeta separada, y crear una segunda carpeta de datos “solo lectura” para guardar los datos “limpios”.</p>
+</div>
+<div id="trata-la-salida-generada-como-descartable" class="section level2">
+<h2><span class="header-section-number">3.6</span> Trata la salida generada como descartable</h2>
+<p>Cualquier cosa generada por tus scripts debe ser tratado como descartable: debería poder ser regenerada a partir de tus scripts.</p>
+<p>Hay muchas formas de manejar estas salidas. Es útil tener un carpeta de salida con diferentes sub-carpetas para cada análisis. Esto hace que sea más fácil encontrar los resultados, como muchos de los análisis son exploratorios y no terminan usándose en el proyecto final, y algunos de los análisis se comparten entre proyectos.</p>
+<div class="callout">
+<h2 id="tip-practicas-suficientemente-buenas-para-la-computacion-cientifica">
+Tip: Prácticas suficientemente buenas para la computación científica
+</h2>
+<p>
+<a href="https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf">Good Enough Practices for Scientific Computing</a> da las siguientes recomendaciones para la organización de proyectos:
+</p>
+<ol style="list-style-type: decimal">
+<li>
+Poner cada proyecto en su propia carpeta, la cual tiene el nombre del proyecto.
+</li>
+<li>
+Poner los documentos de texto asociados con el proyecto una carpeta llamada <code>doc</code>.
+</li>
+<li>
+Poner los datos “crudos” en una carpeta llamada <code>data</code>, y los archivos generados durante la limpieza en una carpeta llamada <code>results</code>.
+</li>
+<li>
+Poner el código de fuente del proyecto y los programas en la carpeta <code>scr</code> y programas externos o compilados localmente en la carpeta <code>bin</code>.
+</li>
+<li>
+Nombrar todos los archivos de forma que refleje su contenido o función.
+</li>
+</ol>
+</div>
+<div class="callout">
+<h2 id="tip-projecttemplate---una-posible-solucion">
+Tip: ProjectTemplate - una posible solución
+</h2>
+<p>
+Una forma de automatizar el manejo de proyectos es instalar un paquete de terceros, <code>ProjectTemplate</code>. Este paquete va a configurar una estructura ideal para el manejo del proyecto. Es muy útil ya que permite tener el análisis de manera estructurada y organizada. En conjunto con la funcionalidad propia de RStudio y Git vas a poder mantener un seguimiento de tu trabajo y ser capaz de compartirlo con colaboradores.
+</p>
+<ol style="list-style-type: decimal">
+<li>
+Instala <code>ProjectTemplate</code>.
+</li>
+<li>
+Carga el paquete.
+</li>
+<li>
+Inicializa el proyecto:
+</li>
+</ol>
+</div>
+<p><code>r  install.packages(&quot;ProjectTemplate&quot;)  library(ProjectTemplate)  create.project(&quot;../my_project&quot;, merge.strategy = &quot;allow.non.conflict&quot;)</code></p>
+<p>Para más información de ProjectTemplate y sus funcionalidades vista el sitio web <a href="http://projecttemplate.net/index.html">ProjectTemplate</a>.</p>
+<pre><code>
+
+
+## Separa la definición de la función de su aplicación
+
+
+Cuando el proyecto en nuevo, los archivos script generalmente contienen muchas
+líneas de código que es ejecutado directamente. Cuando madura, los pedazos 
+reusables son convertidos en funciones. Es buena idea separar estas funciones
+en un carpeta distinta; una carpeta para las funciones útiles que vas a reusar
+entre análisis y proyectos y otra para guardar los scripts de análisis.
+
+&lt;div class=&quot;callout&quot;&gt;
+&lt;h2 id=&quot;tip-evita-la-duplicacion&quot;&gt;Tip: evita la duplicación&lt;/h2&gt;
+&lt;p&gt;Puede que te encuentres usando datos o scripts de análisis entre varios proyectos. Generalmente, vas a querer evitar la duplicación para ahorrar espacio y evitar hacer cambios al código en varios lugares.&lt;/p&gt;
+&lt;p&gt;En este caso es útil hacer &amp;quot;vínculos símbolicos&amp;quot;, basicamente son atajos a archivos que están en otro lugar del sistema de archivos. En Linux y OS x se usar comando &lt;code&gt;ln -s&lt;/code&gt;, y en Windows se puede crear un acceso directo o usar el comando &lt;code&gt;mklink&lt;/code&gt; en la terminal de Windows.&lt;/p&gt;
+&lt;/div&gt;
+
+## Guarda los datos en la carpeta data
+
+Ahora que tenemos una buena estructura de carpetas, vamos a guardar el archivo
+de datos en la carpeta `data/`.
+
+
+&lt;div class=&quot;challenge&quot;&gt;
+&lt;h2 id=&quot;desafio-1&quot;&gt;Desafio 1&lt;/h2&gt;
+&lt;p&gt;Descarga los datos de gapminder de &lt;a href=&quot;https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv&quot;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;Descarga el archivo (CTRL + S, click botón derecho -&amp;gt; &amp;quot;Guardar como&amp;quot;, o Archivo -&amp;gt; &amp;quot;Guardar página como&amp;quot;)&lt;/li&gt;
+&lt;li&gt;Asegúrate que el archivo guardado tiene el nombre &lt;code&gt;gapminder-FiveYearData.csv&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Guarda el archivo en la carpeta &lt;code&gt;data/&lt;/code&gt; dentro de tu proyecto.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Más tarde vamos a cargar e inspeccionar estos datos.&lt;/p&gt;
+&lt;/div&gt;
+
+
+## Control de Versión
+
+También hemos configurado nuestro proyecto para que se integre con git, 
+poniendolo bajo control de versión. RStudio tiene una buena interfaz a git
+que la consola, pero es muy limitada por lo que a veces será necesario usar
+la consola. Vamos a hacer confirmación (*commit*)  inicial de nuestros archivos.
+
+El panel de &quot;Environment/History&quot;&quot; también tiene el panel de &quot;Git&quot;. Podemos
+hacer un *stage* de cada archivo marcando la casilla al lado:
+Vas a ver una &quot;A&quot; verde al lado de los archivos y carpetas preparados, y signos
+de pregunta amarillos al lado de los archivos y carpetas que git no está 
+siguiendo. RStudio también muestra la diferencia entre los archivos en las
+diferentes confirmaciones.
+
+&lt;div class=&quot;callout&quot;&gt;
+&lt;h2 id=&quot;tip-versionando-salida-descartable&quot;&gt;Tip: versionando salida descartable&lt;/h2&gt;
+&lt;p&gt;En general no querés versionar las salidas descartable (o los datos de solo lectura). Hay que modificar el archivo &lt;code&gt;.gitignore&lt;/code&gt; para decirle que ignore estos archivos y carpetas.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;challenge&quot;&gt;
+&lt;h2 id=&quot;desafio-2&quot;&gt;Desafio 2&lt;/h2&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;Crea una carpeta dentro del proyecto llamada &lt;code&gt;graphs&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Modifica el archivo &lt;code&gt;.gitignore&lt;/code&gt; para que contenga &lt;code&gt;graphs&lt;/code&gt; para que estas salidas descartables no sean versionadas.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&gt;&lt;div class=&quot;solution&quot;&gt;
+&gt;&lt;p&gt;## Solución al Desafio 3&lt;/p&gt;
+&gt;&lt;p&gt;Esto puede ser logrado con la linea de comando: &amp;gt; $ mkdir graphs &amp;gt; $ echo &amp;quot;graphs/&amp;quot; &amp;gt;&amp;gt; .gitignore&lt;/p&gt;
+&gt;&lt;/div&gt;
+</code></pre>
+</div>
+<div id="breve-introduccion-a-git" class="section level2">
+<h2><span class="header-section-number">3.7</span> Breve Introducción a Git</h2>
+<p>El control de versión es un sistema que permite hacer backups de nuestro código y colaborar con otras personas de forma simple. Los primeros sistemas de versionado datan de 1980. Desde entonces han sido mejorados en gran medida. Uno de los sistemas más populares es Git. En git, cada versión puede pensarse como una foto instantánea de los archivos y carpetas en ese momento. Cuando inicializamos git este crea una carpeta <code>.git</code> en nuestra carpeta de trabajo, dentro de esa carpeta hay una base de datos donde guarda esas instantáneas.</p>
+<p>Los archivos en git pueden tener dos estados básicos: con seguimiento y sin seguimiento. Un archivo sin seguimiento no está dentro de git y por lo tanto no sabe si ha sido modificado. En cambio, un archivo que esta siendo seguido, git puede saber que ha cambiado desde la última vez fue “confirmado”. Para que sea seguido el archivo, primero debemos añadirlo (<em>add</em>). En RStudio, basta con marcar la casilla al lado del archivo. Los archivos marcados pasarán a tener una A verde. Y pasan a lo como area de preparación (<em>staging area</em>) y se dicen que están preparados. Cuando confirmamos (<em>commit</em>) los archivos que estaban en preparación pasan a ser parte de la instantánea dentro de git. En cada confirmación debemos poner un mensaje corto, menos de 50 caracteres. El mensaje debe ser lo más descriptivo posible para saber que hemos cambiado. Además del mensaje, podemos incluir una descripción más larga.</p>
+<p>Luego el ciclo se repite cada vez que modifiquemos los archivos. Es una buena práctica hacer solo un <em>commit</em> por archivo modificado, a menos que las modificaciones esten relacionadas.</p>
+<p>Por otro lado, podemos tener git en un servidor remoto. De forma que otros colaboradores puedan trabajar en el proyecto al mismo tiempo. Primero debemos subir los cambios que hicimos. Para configurar el servidor remoto debemos entrar en el shell. Y escribir:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> remote add origin git@github.com:EstadisticaUNTDF/test.git</code></pre></div>
+<p>Con esto estamos diciendo a git que añada un servidor remoto llamado <em>origin</em> y a continuación le damos la <em>URL</em>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> remote</code></pre></div>
+<p>Con este comando vemos cuales son nuestros servidores remotos. Y al utilizar el botón de flecha verde (Push) en la pestaña de Git, enviamos nuestros cambios al servidor.</p>
+<p>Supongamos ahora que un colaborador ha estado trabajando en el código y ha subido sus cambios al repositorio remoto. Para obtener el nuevo código e integrarlo en nuestra versión local debemos hacer clic en la flecha azul hacia abajo. De esta forma bajamos las últimas confirmaciones y las fusionamos con nuestro trabajo en caso que no haya conflictos.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="como-obtener-ayuda.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Project.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

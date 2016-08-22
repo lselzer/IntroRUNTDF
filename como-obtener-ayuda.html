@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introducción a R</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Este libro es una introducción a R">
+  <meta name="generator" content="bookdown 0.1.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introducción a R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este libro es una introducción a R" />
+  <meta name="github-repo" content="lselzer/IntroRUNTDF" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introducción a R" />
+  
+  <meta name="twitter:description" content="Este libro es una introducción a R" />
+  
+
+<meta name="author" content="Luciano Selzer">
+
+<meta name="date" content="2016-08-22">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="proyectos.html">
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/lesson.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> ¿Qué es R?</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#prerrequisitos"><i class="fa fa-check"></i><b>1.1</b> Prerrequisitos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdución</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#introduccion-a-rstudio"><i class="fa fa-check"></i><b>2.1</b> Introducción a RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#flujo-de-trabajo-con-rstudio"><i class="fa fa-check"></i><b>2.2</b> Flujo de trabajo con RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#introduccion-a-r"><i class="fa fa-check"></i><b>2.3</b> Introducción a R</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#r-como-calculadora"><i class="fa fa-check"></i><b>2.4</b> R como calculadora</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#funciones-matematicas"><i class="fa fa-check"></i><b>2.5</b> Funciones matemáticas</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#comparando-cosas"><i class="fa fa-check"></i><b>2.6</b> Comparando cosas</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#variables-y-asignacion"><i class="fa fa-check"></i><b>2.7</b> Variables y asignación</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#vectorizacion"><i class="fa fa-check"></i><b>2.8</b> Vectorización</a></li>
+<li class="chapter" data-level="2.9" data-path="intro.html"><a href="intro.html#manejando-el-entorno"><i class="fa fa-check"></i><b>2.9</b> Manejando el entorno</a></li>
+<li class="chapter" data-level="2.10" data-path="intro.html"><a href="intro.html#paquetes-r"><i class="fa fa-check"></i><b>2.10</b> Paquetes R</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="proyectos.html"><a href="proyectos.html"><i class="fa fa-check"></i><b>3</b> Manejo de Proyectos con RStudio</a><ul>
+<li class="chapter" data-level="3.1" data-path="proyectos.html"><a href="proyectos.html#introduccion"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="proyectos.html"><a href="proyectos.html#una-posible-solucion"><i class="fa fa-check"></i><b>3.2</b> Una posible solución</a></li>
+<li class="chapter" data-level="3.3" data-path="proyectos.html"><a href="proyectos.html#buenas-practicas-para-manejo-de-proyectos"><i class="fa fa-check"></i><b>3.3</b> Buenas prácticas para manejo de proyectos</a></li>
+<li class="chapter" data-level="3.4" data-path="proyectos.html"><a href="proyectos.html#tratar-los-datos-como-solo-lectura"><i class="fa fa-check"></i><b>3.4</b> Tratar los datos como solo lectura</a></li>
+<li class="chapter" data-level="3.5" data-path="proyectos.html"><a href="proyectos.html#limpieza-de-datos"><i class="fa fa-check"></i><b>3.5</b> Limpieza de datos</a></li>
+<li class="chapter" data-level="3.6" data-path="proyectos.html"><a href="proyectos.html#trata-la-salida-generada-como-descartable"><i class="fa fa-check"></i><b>3.6</b> Trata la salida generada como descartable</a></li>
+<li class="chapter" data-level="3.7" data-path="proyectos.html"><a href="proyectos.html#breve-introduccion-a-git"><i class="fa fa-check"></i><b>3.7</b> Breve Introducción a Git</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html"><i class="fa fa-check"></i><b>4</b> ¿Cómo obtener ayuda?</a><ul>
+<li class="chapter" data-level="4.1" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#archivos-de-ayuda"><i class="fa fa-check"></i><b>4.1</b> Archivos de ayuda</a></li>
+<li class="chapter" data-level="4.2" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#operadores-especiales"><i class="fa fa-check"></i><b>4.2</b> Operadores Especiales</a></li>
+<li class="chapter" data-level="4.3" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#ayuda-de-paquetes"><i class="fa fa-check"></i><b>4.3</b> Ayuda de paquetes</a></li>
+<li class="chapter" data-level="4.4" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#si-solo-recordas-una-parte-de-la-funcion"><i class="fa fa-check"></i><b>4.4</b> Si solo recordas una parte de la función</a></li>
+<li class="chapter" data-level="4.5" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#si-no-tenes-idea-donde-empezar"><i class="fa fa-check"></i><b>4.5</b> Si no tenés idea donde empezar</a></li>
+<li class="chapter" data-level="4.6" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#cuando-tu-codigo-no-funciona-obtener-ayuda-de-tus-pares"><i class="fa fa-check"></i><b>4.6</b> Cuando tu código no funciona: obtener ayuda de tus pares</a></li>
+<li class="chapter" data-level="4.7" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#otras-fuentes-de-ayuda"><i class="fa fa-check"></i><b>4.7</b> Otras fuentes de ayuda</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción a R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="como-obtener-ayuda" class="section level1">
+<h1><span class="header-section-number">Capítulo 4</span> ¿Cómo obtener ayuda?</h1>
+<div id="archivos-de-ayuda" class="section level2">
+<h2><span class="header-section-number">4.1</span> Archivos de ayuda</h2>
+<p>Toda función de R tiene su página de ayuda. Hay varias formas de llegar a ellas. Dos de ellas consiste en escribir el signo de pregunta (?) seguido del nombre completo de la función. La otra en escribir <code>help()</code> y el nombre de la función</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?function_name
+<span class="kw">help</span>(function_name)</code></pre></div>
+<p>Esto muestra la página de ayuda como <em>html</em> en RStudio, o como texto plano en R. Cada página está dividida de la siguiente manera:</p>
+<ul>
+<li>Título: una breve descripción de la función</li>
+<li>Description: Una descripción un poco más amplia de lo que hace la función.</li>
+<li>Usage: muestra los argumentos que acepta la función.</li>
+<li>Arguments: listado de los argumentos, que significa cada unos y que tipo de valores acepta</li>
+<li>Details: detalles importantes de los que hay que tener en cuenta.</li>
+<li>Value: que tipo de datos devuelve la función.</li>
+<li>See also: otras funciones relacionadas que quizá sean útiles para el trabajo que estamos realizando.</li>
+<li>Examples: ejemplos de uso de la función.</li>
+</ul>
+<p>Otras funciones pueden tener otras secciones, pero estas son las más importantes. Además, las 4 primeras secciones son obligatorias si desarrollamos nuestro paquete.</p>
+<div class="rmdtip">
+<h3 id="tip-leer-la-ayuda">
+Tip: Leer la ayuda
+</h3>
+<p>
+Uno de los aspectos más impresionantes de R es el gran número de funciones. Por lo que es imposible acordarse de todas y como se usan. Por suerte, el tener páginas de ayuda tan detalladas significa que ¡no hace falta recordar todo!
+</p>
+</div>
+</div>
+<div id="operadores-especiales" class="section level2">
+<h2><span class="header-section-number">4.2</span> Operadores Especiales</h2>
+<p>Para obtener ayuda para operadores especiales hay que usarlos entre comillas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?<span class="st">&quot;+&quot;</span></code></pre></div>
+</div>
+<div id="ayuda-de-paquetes" class="section level2">
+<h2><span class="header-section-number">4.3</span> Ayuda de paquetes</h2>
+<p>Muchos paquetes vienen con “vignettes”: son tutoriales o documentación de ejemplo extendida. Sin ningún argumente <code>vignette()</code> listará todas las vignettes de todos los paquetes instalados; si especificamos el paquete, i.e. <code>vignette(package=&quot;package-name&quot;)</code>, nos dará un listado de la vignettes disponibles para <code>package-name</code>, y <code>vignette(&quot;vignette-name&quot;)</code> abrirá la vignette especificada.</p>
+</div>
+<div id="si-solo-recordas-una-parte-de-la-funcion" class="section level2">
+<h2><span class="header-section-number">4.4</span> Si solo recordas una parte de la función</h2>
+<p>Si no estás seguro en que paquete está la función, o como se escribe podés hacer una búsqueda difusa:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">??function_name</code></pre></div>
+</div>
+<div id="si-no-tenes-idea-donde-empezar" class="section level2">
+<h2><span class="header-section-number">4.5</span> Si no tenés idea donde empezar</h2>
+<p>Si no sabés que función o paquete usar <a href="http://cran.at.r-project.org/web/views">CRAN Task Views</a> es una lista de paquetes agrupados en distintos campos de aplicación. Puede ser un buen punto de comienzo.</p>
+</div>
+<div id="cuando-tu-codigo-no-funciona-obtener-ayuda-de-tus-pares" class="section level2">
+<h2><span class="header-section-number">4.6</span> Cuando tu código no funciona: obtener ayuda de tus pares</h2>
+<p>Si tenés problemas usando una función, 9 de cada 10 veces, otros han tenido el mismo problema y han sido respondidas en <a href="http://stackoverflow.com/">Stack Overflow</a>. Podés buscar usando el tag <code>[r]</code>. También podés buscar en la lista de correo <a href="https://stat.ethz.ch/mailman/listinfo/r-help-es">R-Help-es</a>.</p>
+<p>Si no podés encontrar la respuesta, hay que preguntarla e incluir un <em>ejemplo reproducible</em> de nuestro problema. Es muy importante incluirlo, ya que aumenta en varios ordenes de magnitud la probabilidad y velocidad de respuesta. Para incluir datos, la forma más sencilla (si los datos no son demasiados) es usar la función <code>dput</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?dput</code></pre></div>
+<p>Va a crear un volcado de los datos con los que estás trabajando, de forma que puedan ser copiados y pegados en la consola de cualquira que quiera ayudar. Otro punto importante a incluir es el código de lo que hemos intentado hacer. Está muy mal visto preguntar “¿Cómo hago esto?” sin mostrar que hemos intentado resolverlo nosotros. Al menos incluir las respuestas relacionadas a nuestra pregunta y porque no nos sirven.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sessionInfo</span>()</code></pre></div>
+<pre><code>## R version 3.3.1 (2016-06-21)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu precise (12.04.5 LTS)
+## 
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  base     
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_0.12.6     bookdown_0.1.5  digest_0.6.10   mime_0.5       
+##  [5] R6_2.1.2        xtable_1.8-2    formatR_1.4     magrittr_1.5   
+##  [9] evaluate_0.9    stringi_1.1.1   miniUI_0.1.1    rstudioapi_0.6 
+## [13] rmarkdown_1.0   tools_3.3.1     stringr_1.0.0   shiny_0.13.2   
+## [17] yaml_2.1.13     httpuv_1.3.3    htmltools_0.3.5 knitr_1.14     
+## [21] methods_3.3.1</code></pre>
+<p>Imprime en la consola la versión actual de R y también los paquetes que hemos cargado. Esto puede ser muy útil para ayudar a reproducir y solucionar nuestros problemas.</p>
+<div class="desafio">
+<h2 id="desafio-1">
+Desafio 1
+</h2>
+<p>
+Lee la ayuda para la función <code>c()</code> ¿Qué clase de vector esperas crear si ejecutas los siguientes comandos?:
+</p>
+</div>
+<blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)
+<span class="kw">c</span>(<span class="st">&#39;d&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;f&#39;</span>)
+<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">&#39;f&#39;</span>)<span class="st">`</span></code></pre></div>
+</blockquote>
+<p>```</p>
+<div class="desafio">
+<h2 id="desafio-2">
+Desafio 2
+</h2>
+<p>
+Examina la página de ayuda de <code>paste()</code>. Vas a usarla más adelante. ¿Cuál es la diferencia entre los argumentos <code>sep</code>y <code>collapse</code>?
+</p>
+</div>
+<div class="desafio">
+<h2 id="desafio-3">
+Desafio 3
+</h2>
+<p>
+Usa la ayuda para encontrar una función (y sus argumentos) con la cual podrías cargar datos de un archivo csv en el cual las columnas están delimitadas con “” (tabulación) y el punto decimal es un “.” (punto). Esta comprobación del punto decimal es importante, porque en otros paises se usa la coma como separador decimal.<br /> Pista: usa <code>??csv</code> para buscar funciones relacionadas con csv.
+</p>
+</div>
+</div>
+<div id="otras-fuentes-de-ayuda" class="section level2">
+<h2><span class="header-section-number">4.7</span> Otras fuentes de ayuda</h2>
+<ul>
+<li><a href="http://www.statmethods.net/">Quick R</a></li>
+<li><a href="http://www.rstudio.com/resources/cheatsheets/">RStudio cheat sheets</a></li>
+<li><a href="http://www.cookbook-r.com/">Cookbook for R</a></li>
+</ul>
+
+<p>En este curso se va introducir al alumno en el manejo de R, con enfásis en investigación reproducible.</p>
+
+<div id="refs" class="references">
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="proyectos.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Ayuda.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

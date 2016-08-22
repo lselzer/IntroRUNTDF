@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introducción a R</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Este libro es una introducción a R">
+  <meta name="generator" content="bookdown 0.1.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introducción a R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este libro es una introducción a R" />
+  <meta name="github-repo" content="lselzer/IntroRUNTDF" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introducción a R" />
+  
+  <meta name="twitter:description" content="Este libro es una introducción a R" />
+  
+
+<meta name="author" content="Luciano Selzer">
+
+<meta name="date" content="2016-08-22">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="intro.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/lesson.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> ¿Qué es R?</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#prerrequisitos"><i class="fa fa-check"></i><b>1.1</b> Prerrequisitos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdución</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#introduccion-a-rstudio"><i class="fa fa-check"></i><b>2.1</b> Introducción a RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#flujo-de-trabajo-con-rstudio"><i class="fa fa-check"></i><b>2.2</b> Flujo de trabajo con RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#introduccion-a-r"><i class="fa fa-check"></i><b>2.3</b> Introducción a R</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#r-como-calculadora"><i class="fa fa-check"></i><b>2.4</b> R como calculadora</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#funciones-matematicas"><i class="fa fa-check"></i><b>2.5</b> Funciones matemáticas</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#comparando-cosas"><i class="fa fa-check"></i><b>2.6</b> Comparando cosas</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#variables-y-asignacion"><i class="fa fa-check"></i><b>2.7</b> Variables y asignación</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#vectorizacion"><i class="fa fa-check"></i><b>2.8</b> Vectorización</a></li>
+<li class="chapter" data-level="2.9" data-path="intro.html"><a href="intro.html#manejando-el-entorno"><i class="fa fa-check"></i><b>2.9</b> Manejando el entorno</a></li>
+<li class="chapter" data-level="2.10" data-path="intro.html"><a href="intro.html#paquetes-r"><i class="fa fa-check"></i><b>2.10</b> Paquetes R</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="proyectos.html"><a href="proyectos.html"><i class="fa fa-check"></i><b>3</b> Manejo de Proyectos con RStudio</a><ul>
+<li class="chapter" data-level="3.1" data-path="proyectos.html"><a href="proyectos.html#introduccion"><i class="fa fa-check"></i><b>3.1</b> Introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="proyectos.html"><a href="proyectos.html#una-posible-solucion"><i class="fa fa-check"></i><b>3.2</b> Una posible solución</a></li>
+<li class="chapter" data-level="3.3" data-path="proyectos.html"><a href="proyectos.html#buenas-practicas-para-manejo-de-proyectos"><i class="fa fa-check"></i><b>3.3</b> Buenas prácticas para manejo de proyectos</a></li>
+<li class="chapter" data-level="3.4" data-path="proyectos.html"><a href="proyectos.html#tratar-los-datos-como-solo-lectura"><i class="fa fa-check"></i><b>3.4</b> Tratar los datos como solo lectura</a></li>
+<li class="chapter" data-level="3.5" data-path="proyectos.html"><a href="proyectos.html#limpieza-de-datos"><i class="fa fa-check"></i><b>3.5</b> Limpieza de datos</a></li>
+<li class="chapter" data-level="3.6" data-path="proyectos.html"><a href="proyectos.html#trata-la-salida-generada-como-descartable"><i class="fa fa-check"></i><b>3.6</b> Trata la salida generada como descartable</a></li>
+<li class="chapter" data-level="3.7" data-path="proyectos.html"><a href="proyectos.html#breve-introduccion-a-git"><i class="fa fa-check"></i><b>3.7</b> Breve Introducción a Git</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html"><i class="fa fa-check"></i><b>4</b> ¿Cómo obtener ayuda?</a><ul>
+<li class="chapter" data-level="4.1" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#archivos-de-ayuda"><i class="fa fa-check"></i><b>4.1</b> Archivos de ayuda</a></li>
+<li class="chapter" data-level="4.2" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#operadores-especiales"><i class="fa fa-check"></i><b>4.2</b> Operadores Especiales</a></li>
+<li class="chapter" data-level="4.3" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#ayuda-de-paquetes"><i class="fa fa-check"></i><b>4.3</b> Ayuda de paquetes</a></li>
+<li class="chapter" data-level="4.4" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#si-solo-recordas-una-parte-de-la-funcion"><i class="fa fa-check"></i><b>4.4</b> Si solo recordas una parte de la función</a></li>
+<li class="chapter" data-level="4.5" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#si-no-tenes-idea-donde-empezar"><i class="fa fa-check"></i><b>4.5</b> Si no tenés idea donde empezar</a></li>
+<li class="chapter" data-level="4.6" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#cuando-tu-codigo-no-funciona-obtener-ayuda-de-tus-pares"><i class="fa fa-check"></i><b>4.6</b> Cuando tu código no funciona: obtener ayuda de tus pares</a></li>
+<li class="chapter" data-level="4.7" data-path="como-obtener-ayuda.html"><a href="como-obtener-ayuda.html#otras-fuentes-de-ayuda"><i class="fa fa-check"></i><b>4.7</b> Otras fuentes de ayuda</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción a R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Introducción a R</h1>
+<h3 class="subtitle"><em>UNTDF</em></h3>
+<h4 class="author"><em>Luciano Selzer</em></h4>
+<h4 class="date"><em>2016-08-22</em></h4>
+</div>
+<div id="que-es-r" class="section level1">
+<h1><span class="header-section-number">Capítulo 1</span> ¿Qué es R?</h1>
+<p>R es un lenguaje utilizado principalmente para realizar análisis estadísticos, gráficos y para programación. Es una implementación gratuita de S, que fue creado en los años 70 por cientficos en los laboratorios Bell de AT&amp;T. Debido a su licencia libre y relativa facilidad de uso gran cantidad de funciones estadísticas, de manejo de datos, gráficos han sido escritas. Al ser un lenguaje de programación las rutinas o <em>scripts</em> pueden ser compartidos y reutilizados por otros usuarios. Además, ya que todo el análisis estadístico queda documentado en el script permite reproducir los resultados obtenidos en una investigación de forma sencilla. Tiene un sistema de paquetes que permite distribuir de forma simple y rápida nuevas funcionalidades.</p>
+<ol style="list-style-type: decimal">
+<li>Es actualmente el software que ofrece mayor número de funciones estadísticas y aplicaciones para la creación de gráficos. Colaboradores de todo el mundo producen paquetes destinados a resolver problemas particulares o desarrollan determinadas técnicas estadísticas. Cada usuario puede, además, crear sus propias funciones y rutinas combinando las funciones existentes.<br />
+</li>
+<li>Existe una amplia comunidad de usuarios y por lo tanto, una gran oferta de ayudas para aquellos que se inician en el uso del programa, incluyendo foros de discusión en internet y una creciente bibliografía.<br />
+</li>
+<li>R es una <em>lingua franca</em> para el intercambio de ideas en el ámbito científico. De la misma manera en que se escribe un artículo para comunicar ideas, pueden escribirse rutinas para comunicar un análisis. Un número creciente de trabajos citan este software o presentan rutinas escritas en este lenguaje publicadas.</li>
+</ol>
+<div id="prerrequisitos" class="section level2">
+<h2><span class="header-section-number">1.1</span> Prerrequisitos</h2>
+<p>Para este curso son necesarios una serie de programas. Primero, necesitamos R. Para bajarlo ir a <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>, hay varias opciones según el sistema operativo (Linux, Mac OS X, Windows). Elegir la opción correspondiente. Si eligen Windows, a continuación deben elegir <code>base</code> y luego <em>Download R 3.3.1 for Windows</em> que es la versión actual al momento de escribir estas palabras. Luego de que termine de bajar instalarlo.</p>
+<p>Por otro lado, necesitaremos Git. Git es un sistema de control de versión. En el próximo capítulo veremos como se usa. Los sistemas de control de versión sirven para mantener un control de los cambios en el código, respaldo, y facilitan la colaboración entre pares. Para descargarlo ir <a href="https://git-scm.com/" class="uri">https://git-scm.com/</a>. Abajo a la derecha aparecerá una imagen de un monitor con un botón donde aparece la versión para nuestro sistema operativo. Hacer click ahí, descargar e instalar.</p>
+<p>A continuación debemos instalar RStudio. Para esto, debemos navegar hasta <a href="https://www.rstudio.com/products/rstudio/download2/" class="uri">https://www.rstudio.com/products/rstudio/download2/</a> y descargar el la versión gratuita de escritorio (<em>RStudio Desktop</em>). Instalarla.</p>
+<p>Una vez que RStudio está instalado solo falta configurar Git. Solo hace falta decirle la ruta del ejecutable. Para esto hay que abrir RStudio e ir al menú <code>Tools\Global Options</code> y luego ir a <code>Git\SVN</code>, el anteúltimo icono. Si utilizaron la instalación por defecto de Git la ruta es <code>C:\Program Files\Git\bin</code> si tienen Windows 32 bits o <code>C:\Program Files (x86)\Git\bin</code> si tienen Windows 64 bits. La carpeta <code>Program Files</code> puede llamarse <code>Archivos de Programa</code> si tienen Windows en español. Presionar <code>Ok</code>.</p>
+<p>Finalmente, pueden crear un usuario en GitHub. Es un servicion gratuito. Ir a <a href="https://github.com/" class="uri">https://github.com/</a> y completar el formulario con usuario, correo electrónico y contraseña. Presionar <em>Sign Up for GitHub</em>. Si no están en una computadora compartida, también será conveniente crear un par de claves pública y privada para no tener que autenticarse cada vez que quieran subir sus cambios a GitHub. En Rstudio: 1. Vayan a <code>Tools\Global Options...</code>, luego a la pestaña de <code>Git\SVN</code>. 2. Ahí deben hacer click en <code>create RSA key</code>. Pueden poner una <code>Passphase</code> que es como una contraseña, no es obligatoria pero hará que las claves sean más seguras. 3. Presionan <code>Create</code>, les va a aparecer un cartel y ponen <code>Ok</code>. 4. Luego, presionan en <code>View public key</code>. Copian la clave.</p>
+<p>En el sitio web de <a href="https://www.github.com">Github</a>:</p>
+<ol style="list-style-type: decimal">
+<li>En la esquina superior derecha hay un icono que es su foto de usuario. Hacen click ahí y luego en <code>Settings</code>.</li>
+<li>Van la pestaña <code>SSH and GPG keys</code>.</li>
+<li>Luego, presionan en <code>New SHH Key</code>.</li>
+<li>En <em>Title</em> ponen el nombre del programa que lo va a usar. <strong>RStudio</strong> en nuestro caso.</li>
+<li>En <em>Key</em> pegan lo que han copiado de RStudio.</li>
+<li>Finalmente, presionan <code>Add SSH Key</code></li>
+</ol>
+<p>Con todo esto ya instalado y configurado ¡ya están listos para empezar!</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
