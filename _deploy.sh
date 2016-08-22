@@ -2,7 +2,7 @@
 
 set -e
 
-[ -z "${GITHUB_PAT}" ] && exit 1
+[ -z "${GITHUB_PAT}" ] && echo "NULL GITHUB_PAT" && exit 0
 [ "${TRAVIS_BRANCH}" != "master" ] && exit 0
 
 git config --global user.email "luciano.selzer@gmail.com"
