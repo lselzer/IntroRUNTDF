@@ -324,76 +324,75 @@ names_example
 names(names_example)
 ```
 
-> ## Challenge 1
->
-> Start by making a vector with the numbers 1 through 26.
-> Multiply the vector by 2, and give the resulting vector
-> names A through Z (hint: there is a built in vector called `LETTERS`)
->
-> > ## Solution to Challenge 1
-> >
-> > ```{r}
-> > x <- 1:26
-> > x <- x * 2
-> > names(x) <- LETTERS
-> > ```
-> {: .solution}
-{: .challenge}
+
+```{block, type = 'desafio'}
+## Desafio 1
+Empieza haciendo un vector de 1 hasta 26. Multiplica el vector por 2, y dale
+al vector resultante nombres desde de la A hasta la Z (pista: hay un vector
+incluido llamado `LETTERS`).
+
+```
 
 
 ## Data Frames
 
-We said that columns in data.frames were vectors:
+Dijimos que las columnas en el data.frame son vectores:
+
 
 ```{r}
 str(gatos$peso)
-str(gatos$likes_string)
+str(gatos$gusta_ovillo)
 ```
 
 These make sense. But what about
 
 ```{r}
-str(gatos$coat)
+str(gatos$pelaje)
 ```
 
-## Factors
+## Factores
 
-Another important data structure is called a *factor*. Factors usually look like
-character data, but are typically used to represent categorical information. For
-example, let's make a vector of strings labelling cat colorations for all the
-gatos in our study:
+Otra estructura de datos importante son los llamados *factores*. Los factores
+generalmente se ven como datos tipo caracter, pero son usado tipicamente para
+representar información categórica. Por ejemplo, hagamos un vector de cadena 
+nombrando los colores de los gatos para todos los gatos en el estudio:
+
+
 
 ```{r}
-coats <- c('tabby', 'tortoiseshell', 'tortoiseshell', 'black', 'tabby')
-coats
-str(coats)
+pelajes <- c('atigrado', 'carey', 'carey', 'negro', 'atigrado')
+pelajes
+str(pelajes)
 ```
 
-We can turn a vector into a factor like so:
+Podemos convertir nuestro vector en factor así:
 
 ```{r}
-CATegories <- factor(coats)
-class(CATegories)
-str(CATegories)
+Categorias <- factor(pelajes)
+class(Categorias)
+str(Categorias)
 ```
 
-Now R has noticed that there are three possible categories in our data - but it
-also did something surprising; instead of printing out the strings we gave it,
-we got a bunch of numbers instead. R has replaced our human-readable categories
-with numbered indices under the hood:
+Ahora R se ha dado cuenta que hay tres posibles categorias en nuestros datos -
+pero también hizo algo sorprendente; en vez de imprimir las cadenas que le dimos,
+obtuvimos un montón de números. R ha reemplazado nuestra categorias facilmente
+interpretables por nosotros con indices númericos debajo del capot.
 
 ```{r}
-typeof(coats)
-typeof(CATegories)
+typeof(pelajes)
+typeof(Categorias)
 ```
 
-> ## Challenge 2
->
-> Is there a factor in our `gatos` data.frame? what is its name?
-> Try using `?read.csv` to figure out how to keep text columns as character
-> vectors instead of factors; then write a command or two to show that the factor
-> in `gatos` is actually a character vector when loaded in this way.
->
+
+```{block, type = 'desafio'}
+## Desafio 2
+¿Hay algún factor en nuestro data.frame `gatos`?¿Cuál es su nombre? Intenta usar
+`?read.csv` para averiguar como mantener el texto como vector caracter en vez de 
+factores; luego escribe un comando o dos para mostrar que el factor en `gatos`
+es en verdad un vector caracter cuando es cargo de estas forma.
+```
+
+
 > > ## Solution to Challenge 2
 > > ```{r, eval = FALSE}
 > > gatos <- read.csv(file="data/feline-data.csv", stringsAsFactors=FALSE)
@@ -402,12 +401,12 @@ typeof(CATegories)
 > > Note: new students find the help files difficult to understand; make sure to let them know
 > > that this is typical, and encourage them to take their best guess based on semantic meaning,
 > > even if they aren't sure.
-> {: .solution}
-{: .challenge}
 
-In modelling functions, it's important to know what the baseline levels are. This
-is assumed to be the first factor, but by default factors are labelled in
-alphabetical order. You can change this by specifying the levels:
+En las funciones modeladoras, es importante saber cuales son los niveles de base.
+Se asume que es el primer factor, pero por defecto los factores son etiquetados
+en orden alfabético. Podes cambiar esto especificando los niveles:
+
+
 
 ```{r}
 mydata <- c("case", "control", "control", "case")
@@ -415,48 +414,53 @@ factor_ordering_example <- factor(mydata, levels = c("control", "case"))
 str(factor_ordering_example)
 ```
 
-In this case, we've explicitly told R that "control" should represented by 1, and
-"case" by 2. This designation can be very important for interpreting the
-results of statistical models!
+En este caso, le hemos explicitado a R que "control" debería ser representado
+por 1, y "case" por 2. Esta designación es muy importante al interpretar los 
+resultados de los modelos estadísticos.
 
-## Lists
+## Listas
 
-Another data structure you'll want in your bag of tricks is the `list`. A list
-is simpler in some ways than the other types, because you can put anything you
-want in it:
+Otra estructura de datos que querrás en tu manga será la `list` (lista).
+Una lista tiene menos restricciones que otras estructuras, porque podés poner
+cualquier cosa en ella:
+
 
 ```{r}
-list_example <- list(1, "a", TRUE, 1+4i)
+list_example <- list(1, "a", TRUE, 1 + 4i)
 list_example
 another_list <- list(title = "Research Bazaar", numbers = 1:10, data = TRUE )
 another_list
 ```
 
-We can now understand something a bit surprising in our data.frame; what happens if we run:
+Ahora podemos entender algo sorprendente de nuestra data.frame; ¿que sucede si 
+ejecutamos?:
+
 
 ```{r}
 typeof(gatos)
 ```
 
-We see that data.frames look like lists 'under the hood' - this is because a
-data.frame is really a list of vectors and factors, as they have to be - in
-order to hold those columns that are a mix of vectors and factors, the
-data.frame needs something a bit more flexible than a vector to put all the
-columns together into a familiar table.  In other words, a `data.frame` is a
-special list in which all the vectors must have the same length.
+Vemos que las data.frames se ven como listas "debajo del capot" - esto es porque
+en realidad un data.frame es una lista de vectores y factores - para lograr
+contener esas columnas que son una mezcla de vectores y factores, la data.frame
+necesita algo más flexible que un vector para poner todas las columnas en
+una tabla común. En otras palabras, `data.frame` es una lista especial en la
+cual todos los vectores tienen que tener la misma longitud.
 
-In our `gatos` example, we have an integer, a double and a logical variable. As
-we have seen already, each column of data.frame is a vector.
+En nuestro ejemplo `gatos`, tenemos una variable *integer*, una *double* y una
+*logical*. Como hemos visto ya, cada columna del data.frame es un vector
 
 ```{r}
-gatos$coat
+gatos$pelaje
 gatos[,1]
 typeof(gatos[,1])
 str(gatos[,1])
 ```
 
-Each row is an *observation* of different variables, itself a data.frame, and
-thus can be composed of element of different types.
+Cada columna es una *observación* de cada tipo de variable, por si misma una
+data.frame, y por lo tanto puede estar compuesta de elementos de diferentes 
+tipos.
+
 
 ```{r}
 gatos[1,]
@@ -464,77 +468,95 @@ typeof(gatos[1,])
 str(gatos[1,])
 ```
 
-> ## Challenge 3
->
-> There are several subtly different ways to call variables, observations and
-> elements from data.frames:
->
-> - `gatos[1]`
-> - `gatos[[1]]`
-> - `gatos$coat`
-> - `gatos`["coat"]
-> - `gatos[1, 1]`
-> - `gatos[, 1]`
-> - `gatos[1, ]`
->
-> Try out these examples and explain what is returned by each one.
->
-> *Hint:* Use the function `typeof()` to examine what is returned in each case.
->
-> > ## Solution to Challenge 3
-> > ```{r, eval=TRUE, echo=TRUE}
-> > gatos[1]
-> > ```
-> > We can think of a data frame as a list of vectors. The single brace `[1]`
-> returns the first slice of the list, as another list. In this case it is the
-> first column of the data frame.
-> > ```{r, eval=TRUE, echo=TRUE}
-> > gatos[[1]]
-> > ```
-> > The double brace `[[1]]` returns the contents of the list item. In this case
-> it is the contents of the first column, a _vector_ of type _factor_.
-> > ```{r, eval=TRUE, echo=TRUE}
-> > gatos$coat
-> > ```
-> > This example uses the `$` character to address items by name. _coat_ is the
-> first column of the data frame, again a _vector_ of type _factor_.
-> > ```{r, eval=TRUE, echo=TRUE}
-> > gatos["coat"]
-> > ```
-> > Here we are using a single brace `["coat"]` replacing the index number with
-> the column name. Like example 1, the returned object is a _list_.
-> > ```{r, eval=TRUE, echo=TRUE}
-> > gatos[1, 1]
-> > ```
-> > This example uses a single brace, but this time we provide row and column
-> coordinates. The returned object is the value in row 1, column 1. The object
-> is an _integer_ but because it is part of a _vector_ of type _factor_, R
-> displays the label "calico" associated with the integer value.
-> > ```{r, eval=TRUE, echo=TRUE}
-> > gatos[, 1]
-> > ```
-> > Like the previous example we use single braces and provide row and column
-> coordinates. The row coordinate is not specified, R interprets this missing
-> value as all the elements in this _column_ _vector_.
-> > ```{r, eval=TRUE, echo=TRUE}
-> > gatos[1, ]
-> > ```
-> > Again we use the single brace with row and column coordinates. The column
-> coordinate is not specified. The return value is a _list_ containing all the
-> values in the first row.
-> {: .solution}
-{: .challenge}
+```{block, type = 'desafio'}
+## Desafio 3
+
+Hay varios formas sutilmente diferentes para llamar a las variables:
+
+ - `gatos[1]`
+ - `gatos[[1]]`
+ - `gatos$pelaje`
+ - `gatos`["pelaje"]
+ - `gatos[1, 1]`
+ - `gatos[, 1]`
+ - `gatos[1, ]`
+
+*Pista* : Usa la función `typeof()` para examinar que se devuelve en cada caso.
+```
+
+## Solución al Desafio 3
+
+```{r, eval=TRUE, echo=TRUE}
+gatos[1]
+```
+
+Podemos pensar que la data.frame es una lista de vectores. Un corchete simple 
+`[1]` devuelve la primer rebanda de la lista de vectores, como otra lista. En
+este caso la primera columna del data.frame.
+
+```{r, eval=TRUE, echo=TRUE}
+gatos[[1]]
+```
+
+Los corchetes dobles `[[1]]` devuelven el contenido del item de la lista. En
+este caso los contenidos de la primera columna, un *vector* de tipo *factor*.
+
+
+```{r, eval=TRUE, echo=TRUE}
+gatos$pelaje
+```
+
+Este ejemplo usa el signo `$` para llamar a los items por su nombre. *pelaje*
+es la primera columna de la data.frame, un *vector* de tipo *factor*.
+
+
+```{r, eval=TRUE, echo=TRUE}
+gatos["pelaje"]
+```
+
+Aquí usamos el corchete simple `["pelaje"]` reemplazando el número de indice con
+el nombre de la columna. Como en el primer ejemplo, el objeto que devuelve
+es una lista *list*
+
+```{r, eval=TRUE, echo=TRUE}
+gatos[1, 1]
+```
+
+Este ejemplo usa un corchete simple, pero esta vez damos el valor de fila y
+columna. El objeto que se devuelve es el valor de la fila 1 y columna. El
+objeto es  *integer* porque es parte de un *vector* de tipo *factor*, R muestra
+la etiqueta "atigrado"
+
+```{r, eval=TRUE, echo=TRUE}
+gatos[, 1]
+```
+
+Como en el ejemplo anterior usamos corchetes simples y proveemos las
+coordenadas de fila y columna. La fila no está especificada, R interpreta este
+valor ausente como todo los valores del este *vector* *columna*.
+
+```{r, eval=TRUE, echo=TRUE}
+gatos[1, ]
+```
+
+De nuevo usamos el corchete simple con las coordenadas de fila y columa. La
+columna no está especificada. Se devuelve una *lista* que contiene todos
+los valores de la primer columna.
+
 
 ## Matrices
 
-Last but not least is the matrix. We can declare a matrix full of zeros:
+Último pero no menos está la matriz. Podemos declarar una matriz llena de ceros:
+
 
 ```{r}
-matrix_example <- matrix(0, ncol=6, nrow=3)
+matrix_example <- matrix(0, ncol = 6, nrow = 3)
 matrix_example
 ```
 
-And similar to other data structures, we can ask things about our matrix:
+Y como en otras estructuras de datos, podemos preguntar cosas sobre nuestra
+matriz:
+
 
 ```{r}
 class(matrix_example)
@@ -545,104 +567,88 @@ nrow(matrix_example)
 ncol(matrix_example)
 ```
 
-> ## Challenge 4
->
-> What do you think will be the result of
-> `length(matrix_example)`?
-> Try it.
-> Were you right? Why / why not?
->
-> > ## Solution to Challenge 4
-> >
-> > What do you think will be the result of
-> > `length(matrix_example)`?
-> >
-> > ```{r}
-> > matrix_example <- matrix(0, ncol=6, nrow=3)
-> > length(matrix_example)
-> > ```
-> >
-> > Because a matrix is a vector with added dimension attributes, `length`
-> > gives you the total number of elements in the matrix.
-> {: .solution}
-{: .challenge}
+```{block, type='desafio'}
+## Desafio 4
+
+¿Cual crees que será el resultado de `length(matrix_example)`?
+Prueba el código.  
+¿Estabas en lo correcto?¿Por qué?
+
+```
 
 
-> ## Challenge 5
->
-> Make another matrix, this time containing the numbers 1:50,
-> with 5 columns and 10 rows.
-> Did the `matrix` function fill your matrix by column, or by
-> row, as its default behaviour?
-> See if you can figure out how to change this.
-> (hint: read the documentation for `matrix`!)
->
-> > ## Solution to Challenge 5
-> >
-> > Make another matrix, this time containing the numbers 1:50,
-> > with 5 columns and 10 rows.
-> > Did the `matrix` function fill your matrix by column, or by
-> > row, as its default behaviour?
-> > See if you can figure out how to change this.
-> > (hint: read the documentation for `matrix`!)
-> >
-> > ```{r, eval=FALSE}
-> > x <- matrix(1:50, ncol=5, nrow=10)
-> > x <- matrix(1:50, ncol=5, nrow=10, byrow = TRUE) # to fill by row
-> > ```
-> {: .solution}
-{: .challenge}
+<div class='solution'>
+## Solución al Desafio 4
+¿Cuál crees que será el resultado de 
+`length(matrix_example)`?
+
+```{r}
+matrix_example <- matrix(0, ncol = 6, nrow = 3)
+length(matrix_example)
+```
+
+Porque la matriz es un vector con el añadido de atributos de dimension, 
+`length` te da el número total de elementos dentro de la matriz.
+</div>
 
 
-> ## Challenge 6
->  Create a list of length two containing a character vector for each of the sections in this part of the workshop:
->
->  - Data types
->  - Data structures
->
->  Populate each character vector with the names of the data types and data
->  structures we've seen so far.
->
-> > ## Solution to Challenge 6
-> > ```{r}
-> > dataTypes <- c('double', 'complex', 'integer', 'character', 'logical')
-> > dataStructures <- c('data.frame', 'vector', 'factor', 'list', 'matrix')
-> > answer <- list(dataTypes, dataStructures)
-> > ```
-> > Note: it's nice to make a list in big writing on the board or taped to the wall
-> > listing all of these types and structures - leave it up for the rest of the workshop
-> > to remind people of the importance of these basics.
-> >
-> {: .solution}
-{: .challenge}
+
+```{block, type='desafio'}
+## Desafio 5
+Crea otra matriz, esta vez que contenga los numeros de 1 a 50, con
+5 columnas y 10 filas.  
+¿Cómo lleno la función `matrix` la matriz? ¿Por columnas o por filas?
+¿Cuál es su opción por defecto? 
+Fijate si podés averiguar como cambiar esto (pista: lee la documentación de
+`matrix`).
+
+```
+
+## Solución al Desafio 5
+```{r, eval=FALSE}
+x <- matrix(1:50, ncol=5, nrow=10)
+x <- matrix(1:50, ncol=5, nrow=10, byrow = TRUE) # to fill by row
+```
 
 
-> ## Challenge 7
->
-> Consider the R output of the matrix below:
-> ```{r, echo=FALSE}
-> matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE)
-> ```
-> What was the correct command used to write this matrix? Examine
-> each command and try to figure out the correct one before typing them.
-> Think about what matrices the other commands will produce.
->
-> 1. `matrix(c(4, 1, 9, 5, 10, 7), nrow = 3)`
-> 2. `matrix(c(4, 9, 10, 1, 5, 7), ncol = 2, byrow = TRUE)`
-> 3. `matrix(c(4, 9, 10, 1, 5, 7), nrow = 2)`
-> 4. `matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE)`
->
-> > ## Solution to Challenge 7
-> >
-> > Consider the R output of the matrix below:
-> > ```{r, echo=FALSE}
-> > matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE)
-> > ```
-> > What was the correct command used to write this matrix? Examine
-> > each command and try to figure out the correct one before typing them.
-> > Think about what matrices the other commands will produce.
-> > ```{r, eval=FALSE}
-> > matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE)
-> > ```
-> {: .solution}
-{: .challenge}
+```{block, type='desafio'}
+## Desafio 6
+
+Crea una lista de longitud 2 que contenga un vector caracter para cada parte de
+lo que hemos visto
+```
+
+  - Data types
+  - Data structures
+
+
+Llena cada vector con los nombres de los tipos de datos y las estructuras de
+datos que hemos visto hasta ahora.
+
+
+## Solucion al Desafio 6
+```{r}
+dataTypes <- c('double', 'complex', 'integer', 'character', 'logical')
+dataStructures <- c('data.frame', 'vector', 'factor', 'list', 'matrix')
+answer <- list(dataTypes, dataStructures)
+```
+
+
+```{block, type='desafio'}
+## Desafio 7
+Considera la salida de R de la siguiente matriz:
+     [,1] [,2]
+[1,]    4    1
+[2,]    9    5
+[3,]   10    7
+
+¿Cual fue el comando que se uso para crearla? 
+Examina cada comando e intenta pensar cual es el correcto antes de tipearlos.
+Piensa en que tipo de matriz producirá cada uno.
+
+1. `matrix(c(4, 1, 9, 5, 10, 7), nrow = 3)`
+2. `matrix(c(4, 9, 10, 1, 5, 7), ncol = 2, byrow = TRUE)`
+3. `matrix(c(4, 9, 10, 1, 5, 7), nrow = 2)`
+4. `matrix(c(4, 1, 9, 5, 10, 7), ncol = 2, byrow = TRUE)`
+```
+
