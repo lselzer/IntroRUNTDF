@@ -1,7 +1,7 @@
 # Introdución {#intro}
 
 Trabajar con la interfaz de gráfica de R es un poco incómodo (poniendolo 
-suavemente). Por lo que se han desarrollado varios entornos de desarrollo  
+suavemente). Por lo que se han desarrollado varios entornos de desarrollo
 integrado (IDE por sus siglas en inglés) que facilitan su uso. Una de las más
 trabajadas y pulidas es RStudio.
 
