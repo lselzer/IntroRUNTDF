@@ -1,0 +1,53 @@
+# Estructura de Datos
+
+Una de las características más poderosa de R es la habilidad de leer datos 
+tabulares -- como la que podrías tener en una hoja de cállculo o CSV.
+Empecemos por hacer un set datos de prueba en la carpeta `data/`, llamada
+`datos-felinos.csv`.
+
+```{r, eval=FALSE}
+coat,weight,likes_string
+calico,2.1,1
+black,5.0,0
+tabby,3.2,1
+```
+
+
+```{block, type='rmdtip'}
+## Tip: Editando archivos de texto en R
+
+Alternativamente, podés crear `data/datos-felinos.csv` usando un editor de texto
+(Bloc de Notas, Nano) o con RStudio usando la opción **File -> New File -> Text File**.
+
+```
+
+
+```{r, echo = FALSE}
+gatos.df <- data.frame(pelaje = c("atigrado", "negro", "bicolor"),
+                      peso = c(2.1, 5.0, 3.2),
+                      gusta_ovillo = c(TRUE, FALSE, TRUE))
+write.csv(cats.df, "data/datos-felinos.csv", row.names = FALSE)
+```
+
+Podemos cargarlo en R usando la siguiente función:
+
+```{r}
+gatos <- read.csv(file = "data/datos-felinos.csv")
+gatos
+```
+
+
+La función `read.csv` se usa para leer datos tabulares almacenados como texto
+donde la columnas de datos están delimitadas por comas (CSV = comma separated 
+values). Si guardamos el archivos con Excel con configuración regional en
+español o similar, probablmente el archivo no sea un archivo CSV legal. En este
+caso las comas se usan como punto decimal, entonces se usa ";" como separador
+de columnas. La función `read.csv2` tiene en cuenta está distinción. Otro 
+delimitador común de columnas es la tabulación, si los datos están en este 
+formato hay que usar la función `read.delim`. Si los datos están separados con
+otro caracter se puede usar la función `read.table` que es más general y
+flexible.
+
+Podemos empezar a exploar nuestro set de datos enseguida, seleccionando columnas
+con el operador `$`:
+
